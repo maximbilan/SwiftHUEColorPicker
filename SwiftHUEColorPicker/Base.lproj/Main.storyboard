@@ -24,25 +24,14 @@
                                     <constraint firstAttribute="height" constant="100" id="u0Q-z5-enS"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5KP-io-dKf" customClass="HUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
-                                <rect key="frame" x="227" y="275" width="147" height="49"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="EfZ-JH-4Y9"/>
-                                    <constraint firstAttribute="width" constant="147" id="c9X-6v-zXX"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="Wjz-WT-9Xa" secondAttribute="centerY" constant="230" id="C03-Ao-M8W"/>
-                            <constraint firstAttribute="centerX" secondItem="5KP-io-dKf" secondAttribute="centerX" constant="-0.5" id="SWr-f8-sXD"/>
                             <constraint firstAttribute="centerX" secondItem="Wjz-WT-9Xa" secondAttribute="centerX" id="Vb8-Dm-onM"/>
-                            <constraint firstAttribute="centerY" secondItem="5KP-io-dKf" secondAttribute="centerY" constant="0.5" id="kIq-yS-v2Z"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="colorPicker" destination="5KP-io-dKf" id="Ihw-h7-eG1"/>
                         <outlet property="colorView" destination="Wjz-WT-9Xa" id="mnR-lj-lxl"/>
                     </connections>
                 </viewController>
