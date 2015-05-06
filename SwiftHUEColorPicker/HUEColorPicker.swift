@@ -93,6 +93,22 @@ class HUEColorPicker: UIView {
 				UIRectFill(temp)
 			}
 		}
+		
+		
+		let radius = self.frame.size.height * 0.8
+		let circleRect = CGRectMake(currentSelectionX + radius * 0.5, 0, radius, radius)
+		let context = UIGraphicsGetCurrentContext();
+//		CGContextAddEllipseInRect(context, circleRect);
+//		CGContextSetFillColor(context, CGColorGetComponents(UIColor.whiteColor().CGColor));
+//		CGContextFillPath(context);
+//		CGContextStrokePath(context);
+		
+		UIColor.whiteColor().set()
+		
+		CGContextAddEllipseInRect(context, circleRect);
+		CGContextSetFillColor(context, CGColorGetComponents(UIColor.whiteColor().CGColor));
+		CGContextFillPath(context);
+		CGContextStrokePath(context);
 	}
 	
 	// Touch events
