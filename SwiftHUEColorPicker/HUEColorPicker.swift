@@ -8,8 +8,26 @@
 
 import UIKit
 
+protocol HUEColorPickerDelegate {
+	func valuePicked(color: UIColor, type: HUEColorPicker.PickerType)
+}
+
 class HUEColorPicker: UIView {
 	
+	enum PickerType: Int {
+		case Color
+		case Saturation
+		case Luminosity
+	}
+	
+	var delegate: HUEColorPickerDelegate!
+	private var color: UIColor!
+	var currentColor: UIColor {
+		get {
+			return color
+		}
+	}
+		
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
