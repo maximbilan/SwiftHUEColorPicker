@@ -21,6 +21,7 @@ class HUEColorPicker: UIView {
 	}
 	
 	var delegate: HUEColorPickerDelegate!
+	var type: PickerType = PickerType.Color
 	var currentColor: UIColor {
 		get {
 			return color
@@ -71,15 +72,39 @@ class HUEColorPicker: UIView {
 	// Touch events
 	
 	override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+		let touch: AnyObject? = touches.first
+		let point = touch!.locationInView(self)
+		currentSelectionY = point.y
+		color = UIColor(hue: CGFloat(currentSelectionY / self.frame.size.height), saturation: 1.0, brightness: 1.0, alpha: 1.0)
 		
+		if delegate != nil {
+			delegate.valuePicked(color, type: type)
+		}
+		setNeedsDisplay()
 	}
 	
 	override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+		let touch: AnyObject? = touches.first
+		let point = touch!.locationInView(self)
+		currentSelectionY = point.y
+		color = UIColor(hue: CGFloat(currentSelectionY / self.frame.size.height), saturation: 1.0, brightness: 1.0, alpha: 1.0)
 		
+		if delegate != nil {
+			delegate.valuePicked(color, type: type)
+		}
+		setNeedsDisplay()
 	}
 	
 	override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+		let touch: AnyObject? = touches.first
+		let point = touch!.locationInView(self)
+		currentSelectionY = point.y
+		color = UIColor(hue: CGFloat(currentSelectionY / self.frame.size.height), saturation: 1.0, brightness: 1.0, alpha: 1.0)
 		
+		if delegate != nil {
+			delegate.valuePicked(color, type: type)
+		}
+		setNeedsDisplay()
 	}
 	
 	override func touchesCancelled(touches: Set<NSObject>!, withEvent event: UIEvent!) {
