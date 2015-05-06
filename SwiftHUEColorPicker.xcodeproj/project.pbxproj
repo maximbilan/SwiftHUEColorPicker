@@ -17,6 +17,7 @@
 		6DC318441AFA523D00C8D9EE /* ThicknessPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC318431AFA523D00C8D9EE /* ThicknessPicker.swift */; };
 		6DC318461AFA52F400C8D9EE /* BrushSettingsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC318451AFA52F400C8D9EE /* BrushSettingsPicker.swift */; };
 		6DC318481AFA53AE00C8D9EE /* BrushSettingsPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DC318471AFA53AE00C8D9EE /* BrushSettingsPicker.xib */; };
+		6DC3184A1AFA595000C8D9EE /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC318491AFA595000C8D9EE /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		6DC318431AFA523D00C8D9EE /* ThicknessPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThicknessPicker.swift; sourceTree = "<group>"; };
 		6DC318451AFA52F400C8D9EE /* BrushSettingsPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrushSettingsPicker.swift; sourceTree = "<group>"; };
 		6DC318471AFA53AE00C8D9EE /* BrushSettingsPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrushSettingsPicker.xib; sourceTree = "<group>"; };
+		6DC318491AFA595000C8D9EE /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				6DC318431AFA523D00C8D9EE /* ThicknessPicker.swift */,
 				6DC318451AFA52F400C8D9EE /* BrushSettingsPicker.swift */,
 				6DC318471AFA53AE00C8D9EE /* BrushSettingsPicker.xib */,
+				6DC318491AFA595000C8D9EE /* UIView+Extension.swift */,
 			);
 			path = SwiftHUEColorPicker;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DC3184A1AFA595000C8D9EE /* UIView+Extension.swift in Sources */,
 				6DC318201AFA29AC00C8D9EE /* ViewController.swift in Sources */,
 				6DC318421AFA2AD300C8D9EE /* HUEColorPicker.swift in Sources */,
 				6DC318441AFA523D00C8D9EE /* ThicknessPicker.swift in Sources */,
