@@ -45,7 +45,27 @@ class HUEColorPicker: UIView {
 	// Drawing
 	
 	override func drawRect(rect: CGRect) {
+		super.drawRect(rect)
 		
+		UIColor.blackColor().set()
+		var tempYPlace = currentSelectionY
+		if tempYPlace < 0.0 {
+			tempYPlace = 0.0
+		}
+		else if (tempYPlace >= self.frame.size.height) {
+			tempYPlace = self.frame.size.height - 1.0
+		}
+		
+		let temp = CGRectMake(0, tempYPlace, self.frame.size.width, 1.0)
+		UIRectFill(temp)
+		
+		let cbxBegin = self.frame.size.width * 0.2
+		let cbWidth = self.frame.size.width * 0.6
+		for var y: Int = 0; y < Int(self.frame.size.height); ++y {
+			UIColor(hue: CGFloat(y / Int(self.frame.size.height)), saturation: 1.0, brightness: 1.0, alpha: 1.0).set()
+			let temp = CGRectMake(cbxBegin, CGFloat(y), cbWidth, 1)
+			UIRectFill(temp)
+		}
 	}
 	
 	// Touch events
