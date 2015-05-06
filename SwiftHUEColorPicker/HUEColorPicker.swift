@@ -20,6 +20,11 @@ class HUEColorPicker: UIView {
 		case Luminosity
 	}
 	
+	enum PickerDirection: Int {
+		case Horizontal
+		case Vertical
+	}
+	
 	var delegate: HUEColorPickerDelegate!
 	var type: PickerType = PickerType.Color
 	var currentColor: UIColor {
@@ -30,6 +35,7 @@ class HUEColorPicker: UIView {
 	
 	private var color: UIColor!
 	private var currentSelectionY: CGFloat = 0.0
+	private var currentSelectionX: CGFloat = 0.0
 	
 	// Initialization
 	
@@ -57,14 +63,31 @@ class HUEColorPicker: UIView {
 			tempYPlace = self.frame.size.height - 1.0
 		}
 		
-		let temp = CGRectMake(0, tempYPlace, self.frame.size.width, 1.0)
+		var tempXPlace = currentSelectionX
+		if tempXPlace < 0.0 {
+			tempXPlace = 0.0
+		}
+		else if (tempXPlace >= self.frame.size.width) {
+			tempXPlace = self.frame.size.width - 1.0
+		}
+		
+		//let temp = CGRectMake(0, tempYPlace, self.frame.size.width, 1.0)
+		let temp = CGRectMake(tempXPlace, 0, 1.0, self.frame.size.height)
 		UIRectFill(temp)
 		
-		let cbxBegin = self.frame.size.width * 0.2
-		let cbWidth = self.frame.size.width * 0.6
-		for var y: Int = 0; y < Int(self.frame.size.height); ++y {
-			UIColor(hue: CGFloat(CGFloat(y) / self.frame.size.height), saturation: 1.0, brightness: 1.0, alpha: 1.0).set()
-			let temp = CGRectMake(cbxBegin, CGFloat(y), cbWidth, 1)
+//		let cbxBegin = self.frame.size.width * 0.2
+//		let cbWidth = self.frame.size.width * 0.6
+//		for var y: Int = 0; y < Int(self.frame.size.height); ++y {
+//			UIColor(hue: CGFloat(CGFloat(y) / self.frame.size.height), saturation: 1.0, brightness: 1.0, alpha: 1.0).set()
+//			let temp = CGRectMake(cbxBegin, CGFloat(y), cbWidth, 1)
+//			UIRectFill(temp)
+//		}
+		
+		let cbxBegin = self.frame.size.height * 0.2
+		let cbWidth = self.frame.size.height * 0.6
+		for var x: Int = 0; x < Int(self.frame.size.width); ++x {
+			UIColor(hue: CGFloat(CGFloat(x) / self.frame.size.width), saturation: 1.0, brightness: 1.0, alpha: 1.0).set()
+			let temp = CGRectMake(CGFloat(x), cbxBegin, 1, cbWidth)
 			UIRectFill(temp)
 		}
 	}
@@ -74,8 +97,10 @@ class HUEColorPicker: UIView {
 	override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
 		let touch: AnyObject? = touches.first
 		let point = touch!.locationInView(self)
+		currentSelectionX = point.x
 		currentSelectionY = point.y
-		color = UIColor(hue: CGFloat(currentSelectionY / self.frame.size.height), saturation: 1.0, brightness: 1.0, alpha: 1.0)
+		//color = UIColor(hue: CGFloat(currentSelectionY / self.frame.size.height), saturation: 1.0, brightness: 1.0, alpha: 1.0)
+		color = UIColor(hue: CGFloat(currentSelectionX / self.frame.size.width), saturation: 1.0, brightness: 1.0, alpha: 1.0)
 		
 		if delegate != nil {
 			delegate.valuePicked(color, type: type)
@@ -86,8 +111,10 @@ class HUEColorPicker: UIView {
 	override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
 		let touch: AnyObject? = touches.first
 		let point = touch!.locationInView(self)
+		currentSelectionX = point.x
 		currentSelectionY = point.y
-		color = UIColor(hue: CGFloat(currentSelectionY / self.frame.size.height), saturation: 1.0, brightness: 1.0, alpha: 1.0)
+		//color = UIColor(hue: CGFloat(currentSelectionY / self.frame.size.height), saturation: 1.0, brightness: 1.0, alpha: 1.0)
+		color = UIColor(hue: CGFloat(currentSelectionX / self.frame.size.width), saturation: 1.0, brightness: 1.0, alpha: 1.0)
 		
 		if delegate != nil {
 			delegate.valuePicked(color, type: type)
@@ -98,8 +125,10 @@ class HUEColorPicker: UIView {
 	override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
 		let touch: AnyObject? = touches.first
 		let point = touch!.locationInView(self)
+		currentSelectionX = point.x
 		currentSelectionY = point.y
-		color = UIColor(hue: CGFloat(currentSelectionY / self.frame.size.height), saturation: 1.0, brightness: 1.0, alpha: 1.0)
+		//color = UIColor(hue: CGFloat(currentSelectionY / self.frame.size.height), saturation: 1.0, brightness: 1.0, alpha: 1.0)
+		color = UIColor(hue: CGFloat(currentSelectionX / self.frame.size.width), saturation: 1.0, brightness: 1.0, alpha: 1.0)
 		
 		if delegate != nil {
 			delegate.valuePicked(color, type: type)
