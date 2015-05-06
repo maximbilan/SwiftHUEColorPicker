@@ -37,17 +37,20 @@ class HUEColorPicker: UIView {
 	private var color: UIColor!
 	private var currentSelectionY: CGFloat = 0.0
 	private var currentSelectionX: CGFloat = 0.0
+	private var roundedRectPath: UIBezierPath!
 	
 	// Initialization
 	
 	required init(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 		self.backgroundColor = UIColor.clearColor()
+		roundedRectPath = UIBezierPath(roundedRect: self.frame, cornerRadius: 50)
 	}
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		self.backgroundColor = UIColor.clearColor()
+		roundedRectPath = UIBezierPath(roundedRect: self.frame, cornerRadius: 50)
 	}
 	
 	// Drawing
@@ -76,11 +79,11 @@ class HUEColorPicker: UIView {
 		UIRectFill(temp)
 		
 		if direction == .Horizontal {
-			let cbxBegin = self.frame.size.height * 0.2
-			let cbHeight = self.frame.size.height * 0.6
+			let offset = 0//self.frame.size.height * 0.5
+			//let cbHeight = self.frame.size.height * 0.8
 			for var x: Int = 0; x < Int(self.frame.size.width); ++x {
 				UIColor(hue: CGFloat(CGFloat(x) / self.frame.size.width), saturation: 1.0, brightness: 1.0, alpha: 1.0).set()
-				let temp = CGRectMake(CGFloat(x), cbxBegin, 1, cbHeight)
+				let temp = CGRectMake(CGFloat(x), 0, 1, self.frame.size.height)
 				UIRectFill(temp)
 			}
 		}
@@ -95,8 +98,8 @@ class HUEColorPicker: UIView {
 		}
 		
 		
-		let radius = self.frame.size.height * 0.8
-		let circleRect = CGRectMake(currentSelectionX + radius * 0.5, 0, radius, radius)
+		let radius = self.frame.size.height
+		let circleRect = CGRectMake(currentSelectionX - radius * 0.5, 0, radius, radius)
 		let context = UIGraphicsGetCurrentContext();
 //		CGContextAddEllipseInRect(context, circleRect);
 //		CGContextSetFillColor(context, CGColorGetComponents(UIColor.whiteColor().CGColor));
@@ -107,6 +110,12 @@ class HUEColorPicker: UIView {
 		
 		CGContextAddEllipseInRect(context, circleRect);
 		CGContextSetFillColor(context, CGColorGetComponents(UIColor.whiteColor().CGColor));
+		CGContextFillPath(context);
+		CGContextStrokePath(context);
+		
+		UIColor.clearColor().set()
+		
+		CGContextAddPath(context, roundedRectPath.CGPath)
 		CGContextFillPath(context);
 		CGContextStrokePath(context);
 	}
