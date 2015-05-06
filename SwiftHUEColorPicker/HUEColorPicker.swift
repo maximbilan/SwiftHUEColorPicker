@@ -21,19 +21,49 @@ class HUEColorPicker: UIView {
 	}
 	
 	var delegate: HUEColorPickerDelegate!
-	private var color: UIColor!
 	var currentColor: UIColor {
 		get {
 			return color
 		}
 	}
+	
+	private var color: UIColor!
+	private var currentSelectionY: CGFloat = 0.0
+	
+	// Initialization
+	
+	required init(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+		self.backgroundColor = UIColor.clearColor()
+	}
+	
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		self.backgroundColor = UIColor.clearColor()
+	}
+	
+	// Drawing
+	
+	override func drawRect(rect: CGRect) {
 		
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
+	}
+	
+	// Touch events
+	
+	override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+		
+	}
+	
+	override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+		
+	}
+	
+	override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+		
+	}
+	
+	override func touchesCancelled(touches: Set<NSObject>!, withEvent event: UIEvent!) {
+		
+	}
 
 }
