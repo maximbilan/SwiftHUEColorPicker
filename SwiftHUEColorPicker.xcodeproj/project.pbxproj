@@ -13,6 +13,7 @@
 		6DC318251AFA29AC00C8D9EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DC318241AFA29AC00C8D9EE /* Images.xcassets */; };
 		6DC318281AFA29AC00C8D9EE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DC318261AFA29AC00C8D9EE /* LaunchScreen.xib */; };
 		6DC318341AFA29AC00C8D9EE /* SwiftHUEColorPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC318331AFA29AC00C8D9EE /* SwiftHUEColorPickerTests.swift */; };
+		6DC318421AFA2AD300C8D9EE /* HUEColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC318411AFA2AD300C8D9EE /* HUEColorPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		6DC3182D1AFA29AC00C8D9EE /* SwiftHUEColorPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftHUEColorPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DC318321AFA29AC00C8D9EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DC318331AFA29AC00C8D9EE /* SwiftHUEColorPickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftHUEColorPickerTests.swift; sourceTree = "<group>"; };
+		6DC318411AFA2AD300C8D9EE /* HUEColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUEColorPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				6DC318241AFA29AC00C8D9EE /* Images.xcassets */,
 				6DC318261AFA29AC00C8D9EE /* LaunchScreen.xib */,
 				6DC3181B1AFA29AC00C8D9EE /* Supporting Files */,
+				6DC318411AFA2AD300C8D9EE /* HUEColorPicker.swift */,
 			);
 			path = SwiftHUEColorPicker;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DC318201AFA29AC00C8D9EE /* ViewController.swift in Sources */,
+				6DC318421AFA2AD300C8D9EE /* HUEColorPicker.swift in Sources */,
 				6DC3181E1AFA29AC00C8D9EE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +415,7 @@
 				6DC318391AFA29AC00C8D9EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6DC3183A1AFA29AC00C8D9EE /* Build configuration list for PBXNativeTarget "SwiftHUEColorPickerTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +424,7 @@
 				6DC3183C1AFA29AC00C8D9EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
