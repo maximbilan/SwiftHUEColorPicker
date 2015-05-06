@@ -8,11 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, HUEColorPickerDelegate {
 
+	@IBOutlet weak var colorPicker: HUEColorPicker!
+	@IBOutlet weak var colorView: UIView!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
+		
+		colorPicker.delegate = self
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -20,6 +25,9 @@ class ViewController: UIViewController {
 		// Dispose of any resources that can be recreated.
 	}
 
+	func valuePicked(color: UIColor, type: HUEColorPicker.PickerType) {
+		colorView.backgroundColor = color
+	}
 
 }
 

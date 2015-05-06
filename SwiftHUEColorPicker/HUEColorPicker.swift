@@ -63,7 +63,7 @@ class HUEColorPicker: UIView {
 		let cbxBegin = self.frame.size.width * 0.2
 		let cbWidth = self.frame.size.width * 0.6
 		for var y: Int = 0; y < Int(self.frame.size.height); ++y {
-			UIColor(hue: CGFloat(y / Int(self.frame.size.height)), saturation: 1.0, brightness: 1.0, alpha: 1.0).set()
+			UIColor(hue: CGFloat(CGFloat(y) / self.frame.size.height), saturation: 1.0, brightness: 1.0, alpha: 1.0).set()
 			let temp = CGRectMake(cbxBegin, CGFloat(y), cbWidth, 1)
 			UIRectFill(temp)
 		}
