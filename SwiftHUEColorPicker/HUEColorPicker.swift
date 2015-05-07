@@ -79,7 +79,7 @@ class HUEColorPicker: UIView {
 		UIRectFill(temp)
 		
 		if direction == .Horizontal {
-			let offset = 0//self.frame.size.height * 0.5
+			//let offset = 0//self.frame.size.height * 0.5
 			//let cbHeight = self.frame.size.height * 0.8
 			for var x: Int = 0; x < Int(self.frame.size.width); ++x {
 				UIColor(hue: CGFloat(CGFloat(x) / self.frame.size.width), saturation: 1.0, brightness: 1.0, alpha: 1.0).set()
@@ -88,18 +88,18 @@ class HUEColorPicker: UIView {
 			}
 		}
 		else {
-			let cbxBegin = self.frame.size.width * 0.2
-			let cbWidth = self.frame.size.width * 0.6
+//			let cbxBegin = self.frame.size.width * 0.2
+//			let cbWidth = self.frame.size.width * 0.6
 			for var y: Int = 0; y < Int(self.frame.size.height); ++y {
 				UIColor(hue: CGFloat(CGFloat(y) / self.frame.size.height), saturation: 1.0, brightness: 1.0, alpha: 1.0).set()
-				let temp = CGRectMake(cbxBegin, CGFloat(y), cbWidth, 1)
+				let temp = CGRectMake(0, CGFloat(y), self.frame.size.width, 1)
 				UIRectFill(temp)
 			}
 		}
 		
 		
-		let radius = self.frame.size.height
-		let circleRect = CGRectMake(currentSelectionX - radius * 0.5, 0, radius, radius)
+		let radius = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
+		let circleRect = (direction == .Horizontal ? CGRectMake(currentSelectionX - radius * 0.5, 0, radius, radius) : CGRectMake(0, currentSelectionY - radius * 0.5, radius, radius))
 		let context = UIGraphicsGetCurrentContext();
 //		CGContextAddEllipseInRect(context, circleRect);
 //		CGContextSetFillColor(context, CGColorGetComponents(UIColor.whiteColor().CGColor));
