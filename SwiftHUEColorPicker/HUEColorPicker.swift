@@ -113,11 +113,11 @@ class HUEColorPicker: UIView {
 		CGContextFillPath(context);
 		CGContextStrokePath(context);
 		
-		UIColor.clearColor().set()
-		
-		CGContextAddPath(context, roundedRectPath.CGPath)
-		CGContextFillPath(context);
-		CGContextStrokePath(context);
+//		UIColor.clearColor().set()
+//		
+//		CGContextAddPath(context, roundedRectPath.CGPath)
+//		CGContextFillPath(context);
+//		CGContextStrokePath(context);
 	}
 	
 	// Touch events
