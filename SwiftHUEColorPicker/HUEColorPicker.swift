@@ -38,20 +38,17 @@ class HUEColorPicker: UIView {
 	private var currentSelectionY: CGFloat = 0.0
 	private var currentSelectionX: CGFloat = 0.0
 	private var hueImage: UIImage!
-	private var roundedRectPath: UIBezierPath!
 	
 	// Initialization
 	
 	required init(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 		self.backgroundColor = UIColor.clearColor()
-		roundedRectPath = UIBezierPath(roundedRect: self.frame, cornerRadius: 50)
 	}
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		self.backgroundColor = UIColor.clearColor()
-		roundedRectPath = UIBezierPath(roundedRect: self.frame, cornerRadius: 50)
 	}
 	
 	override func layoutSubviews() {
