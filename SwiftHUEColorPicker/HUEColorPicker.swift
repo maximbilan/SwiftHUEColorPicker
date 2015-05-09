@@ -111,50 +111,38 @@ class HUEColorPicker: UIView {
 	override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
 		let touch: AnyObject? = touches.first
 		let point = touch!.locationInView(self)
-		currentSelectionX = point.x
-		currentSelectionY = point.y
-		
-		let hue: CGFloat = (direction == .Horizontal ? CGFloat(currentSelectionX / self.frame.size.width) : CGFloat(currentSelectionY / self.frame.size.height))
-		color = UIColor(hue: hue, saturation: 1.0, brightness: 1.0, alpha: 1.0)
-		
-		if delegate != nil {
-			delegate.valuePicked(color, type: type)
-		}
-		setNeedsDisplay()
+		handleTouch(point)
 	}
 	
 	override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
 		let touch: AnyObject? = touches.first
 		let point = touch!.locationInView(self)
-		currentSelectionX = point.x
-		currentSelectionY = point.y
-		
-		let hue: CGFloat = (direction == .Horizontal ? CGFloat(currentSelectionX / self.frame.size.width) : CGFloat(currentSelectionY / self.frame.size.height))
-		color = UIColor(hue: hue, saturation: 1.0, brightness: 1.0, alpha: 1.0)
-		
-		if delegate != nil {
-			delegate.valuePicked(color, type: type)
-		}
-		setNeedsDisplay()
+		handleTouch(point)
 	}
 	
 	override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
 		let touch: AnyObject? = touches.first
 		let point = touch!.locationInView(self)
-		currentSelectionX = point.x
-		currentSelectionY = point.y
-		
-		let hue: CGFloat = (direction == .Horizontal ? CGFloat(currentSelectionX / self.frame.size.width) : CGFloat(currentSelectionY / self.frame.size.height))
-		color = UIColor(hue: hue, saturation: 1.0, brightness: 1.0, alpha: 1.0)
-		
-		if delegate != nil {
-			delegate.valuePicked(color, type: type)
-		}
-		setNeedsDisplay()
+		handleTouch(point)
 	}
 	
 	override func touchesCancelled(touches: Set<NSObject>!, withEvent event: UIEvent!) {
 		
 	}
 
+	// Touch handling
+	
+	func handleTouch(touchPoint: CGPoint) {
+		currentSelectionX = touchPoint.x
+		currentSelectionY = touchPoint.y
+		
+		let hue: CGFloat = (direction == .Horizontal ? CGFloat(currentSelectionX / self.frame.size.width) : CGFloat(currentSelectionY / self.frame.size.height))
+		color = UIColor(hue: hue, saturation: 1.0, brightness: 1.0, alpha: 1.0)
+		
+		if delegate != nil {
+			delegate.valuePicked(color, type: type)
+		}
+		setNeedsDisplay()
+	}
+	
 }
