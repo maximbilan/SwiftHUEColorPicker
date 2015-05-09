@@ -167,7 +167,23 @@ class HUEColorPicker: UIView {
 		currentSelectionX = touchPoint.x
 		currentSelectionY = touchPoint.y
 		
-		let hue: CGFloat = (direction == .Horizontal ? CGFloat(currentSelectionX / self.frame.size.width) : CGFloat(currentSelectionY / self.frame.size.height))
+		let offset = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
+		let halfOffset = offset * 0.5
+		if currentSelectionX < halfOffset {
+			currentSelectionX = halfOffset
+		}
+		else if currentSelectionX >= self.frame.size.width - halfOffset {
+			currentSelectionX = self.frame.size.width - halfOffset
+		}
+		if currentSelectionY < halfOffset {
+			currentSelectionY = halfOffset
+		}
+		else if currentSelectionY >= self.frame.size.height - halfOffset {
+			currentSelectionY = self.frame.size.height - halfOffset
+		}
+		
+		let hue: CGFloat = (direction == .Horizontal ? CGFloat((currentSelectionX - halfOffset) / (self.frame.size.width - offset))
+													 : CGFloat((currentSelectionY - halfOffset) / (self.frame.size.height - offset)))
 		color = UIColor(hue: hue, saturation: 1.0, brightness: 1.0, alpha: 1.0)
 		
 		if delegate != nil {
