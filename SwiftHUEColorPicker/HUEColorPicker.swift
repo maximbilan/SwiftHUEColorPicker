@@ -53,6 +53,36 @@ class HUEColorPicker: UIView {
 		roundedRectPath = UIBezierPath(roundedRect: self.frame, cornerRadius: 50)
 	}
 	
+	override func layoutSubviews() {
+		super.layoutSubviews()
+		
+		let image = getImageWithColor(UIColor.yellowColor(), size: self.frame.size)
+	}
+	
+	func getImageWithColor(color: UIColor, size: CGSize) -> UIImage {
+		var rect = CGRectMake(0, 0, size.width, size.height)
+		UIGraphicsBeginImageContextWithOptions(size, false, 0)
+		
+		if direction == .Horizontal {
+			for var x: Int = 0; x < Int(self.frame.size.width); ++x {
+				UIColor(hue: CGFloat(CGFloat(x) / self.frame.size.width), saturation: 1.0, brightness: 1.0, alpha: 1.0).set()
+				let temp = CGRectMake(CGFloat(x), 0, 1, self.frame.size.height)
+				UIRectFill(temp)
+			}
+		}
+		else {
+			for var y: Int = 0; y < Int(self.frame.size.height); ++y {
+				UIColor(hue: CGFloat(CGFloat(y) / self.frame.size.height), saturation: 1.0, brightness: 1.0, alpha: 1.0).set()
+				let temp = CGRectMake(0, CGFloat(y), self.frame.size.width, 1)
+				UIRectFill(temp)
+			}
+		}
+		
+		var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+		UIGraphicsEndImageContext()
+		return image
+	}
+	
 	// Drawing
 	
 	override func drawRect(rect: CGRect) {
