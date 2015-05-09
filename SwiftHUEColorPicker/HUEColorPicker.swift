@@ -54,26 +54,26 @@ class HUEColorPicker: UIView {
 	override func layoutSubviews() {
 		super.layoutSubviews()
 		
-		hueImage = getImageWithColor(UIColor.yellowColor(), size: self.frame.size)
+		hueImage = generateHUEImage(self.frame.size)
 	}
 	
-	func getImageWithColor(color: UIColor, size: CGSize) -> UIImage {
+	func generateHUEImage(size: CGSize) -> UIImage {
 		var rect = CGRectMake(0, 0, size.width, size.height)
 		UIGraphicsBeginImageContextWithOptions(size, false, 0)
 		
 		UIBezierPath(roundedRect: rect, cornerRadius: 10.0).addClip()
 		
 		if direction == .Horizontal {
-			for var x: Int = 0; x < Int(self.frame.size.width); ++x {
-				UIColor(hue: CGFloat(CGFloat(x) / self.frame.size.width), saturation: 1.0, brightness: 1.0, alpha: 1.0).set()
-				let temp = CGRectMake(CGFloat(x), 0, 1, self.frame.size.height)
+			for var x: Int = 0; x < Int(size.width); ++x {
+				UIColor(hue: CGFloat(CGFloat(x) / size.width), saturation: 1.0, brightness: 1.0, alpha: 1.0).set()
+				let temp = CGRectMake(CGFloat(x), 0, 1, size.height)
 				UIRectFill(temp)
 			}
 		}
 		else {
-			for var y: Int = 0; y < Int(self.frame.size.height); ++y {
-				UIColor(hue: CGFloat(CGFloat(y) / self.frame.size.height), saturation: 1.0, brightness: 1.0, alpha: 1.0).set()
-				let temp = CGRectMake(0, CGFloat(y), self.frame.size.width, 1)
+			for var y: Int = 0; y < Int(size.height); ++y {
+				UIColor(hue: CGFloat(CGFloat(y) / size.height), saturation: 1.0, brightness: 1.0, alpha: 1.0).set()
+				let temp = CGRectMake(0, CGFloat(y), size.width, 1)
 				UIRectFill(temp)
 			}
 		}
