@@ -17,7 +17,8 @@ class HUEColorPicker: UIView {
 	enum PickerType: Int {
 		case Color
 		case Saturation
-		case Luminosity
+		case Brightness
+		case Alpha
 	}
 	
 	enum PickerDirection: Int {
