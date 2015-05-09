@@ -58,25 +58,25 @@ class HUEColorPicker: UIView {
 	override func drawRect(rect: CGRect) {
 		super.drawRect(rect)
 		
-		UIColor.blackColor().set()
-		var tempYPlace = currentSelectionY
-		if tempYPlace < 0.0 {
-			tempYPlace = 0.0
-		}
-		else if (tempYPlace >= self.frame.size.height) {
-			tempYPlace = self.frame.size.height - 1.0
-		}
-		
-		var tempXPlace = currentSelectionX
-		if tempXPlace < 0.0 {
-			tempXPlace = 0.0
-		}
-		else if (tempXPlace >= self.frame.size.width) {
-			tempXPlace = self.frame.size.width - 1.0
-		}
-		
-		var temp = (direction == .Horizontal ? CGRectMake(tempXPlace, 0, 1.0, self.frame.size.height) : CGRectMake(0, tempYPlace, self.frame.size.width, 1.0))
-		UIRectFill(temp)
+//		UIColor.blackColor().set()
+//		var tempYPlace = currentSelectionY
+//		if tempYPlace < 0.0 {
+//			tempYPlace = 0.0
+//		}
+//		else if (tempYPlace >= self.frame.size.height) {
+//			tempYPlace = self.frame.size.height - 1.0
+//		}
+//		
+//		var tempXPlace = currentSelectionX
+//		if tempXPlace < 0.0 {
+//			tempXPlace = 0.0
+//		}
+//		else if (tempXPlace >= self.frame.size.width) {
+//			tempXPlace = self.frame.size.width - 1.0
+//		}
+//		
+//		var temp = (direction == .Horizontal ? CGRectMake(tempXPlace, 0, 1.0, self.frame.size.height) : CGRectMake(0, tempYPlace, self.frame.size.width, 1.0))
+//		UIRectFill(temp)
 		
 		if direction == .Horizontal {
 			for var x: Int = 0; x < Int(self.frame.size.width); ++x {
