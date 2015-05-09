@@ -54,7 +54,15 @@ class HUEColorPicker: UIView {
 	override func layoutSubviews() {
 		super.layoutSubviews()
 		
-		hueImage = generateHUEImage(self.frame.size)
+		let offset = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
+		var size = self.frame.size
+		if direction == .Horizontal {
+			size.width -= offset
+		}
+		else {
+			size.height -= offset
+		}
+		hueImage = generateHUEImage(size)
 	}
 	
 	func generateHUEImage(size: CGSize) -> UIImage {
@@ -88,18 +96,43 @@ class HUEColorPicker: UIView {
 	override func drawRect(rect: CGRect) {
 		super.drawRect(rect)
 		
-		if hueImage != nil {
-			hueImage.drawInRect(rect)
+		let radius = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
+		let halfRadius = radius * 0.5
+		var circleX = currentSelectionX - halfRadius
+		var circleY = currentSelectionY - halfRadius
+		if circleX >= rect.size.width - radius {
+			circleX = rect.size.width - radius
+		}
+		else if circleX < 0 {
+			circleX = 0
+		}
+		if circleY >= rect.size.height - radius {
+			circleY = rect.size.height - radius
+		}
+		else if circleY < 0 {
+			circleY = 0
 		}
 		
-		let radius = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
-		let circleRect = (direction == .Horizontal ? CGRectMake(currentSelectionX - radius * 0.5, 0, radius, radius) : CGRectMake(0, currentSelectionY - radius * 0.5, radius, radius))
+		let circleRect = (direction == .Horizontal ? CGRectMake(circleX, 0, radius, radius) : CGRectMake(0, circleY, radius, radius))
+		let circleColor = UIColor.blackColor()
+		var hueRect = rect
+		
+		if hueImage != nil {
+			if direction == .Horizontal {
+				hueRect.size.width -= radius
+				hueRect.origin.x += radius * 0.5
+			}
+			else {
+				hueRect.size.height -= radius
+				hueRect.origin.y += radius * 0.5
+			}
+			hueImage.drawInRect(hueRect)
+		}
+		
 		let context = UIGraphicsGetCurrentContext();
-		
-		UIColor.blackColor().set()
-		
+		circleColor.set()
 		CGContextAddEllipseInRect(context, circleRect);
-		CGContextSetFillColor(context, CGColorGetComponents(UIColor.blackColor().CGColor));
+		CGContextSetFillColor(context, CGColorGetComponents(circleColor.CGColor));
 		CGContextFillPath(context);
 		CGContextStrokePath(context);
 	}
