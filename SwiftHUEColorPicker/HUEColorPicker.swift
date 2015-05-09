@@ -81,11 +81,6 @@ class HUEColorPicker: UIView {
 			}
 		}
 		
-//		[UIBezierPath bezierPathWithRoundedRect:imageView.bounds
-//			cornerRadius:10.0] addClip];
-		
-		
-		
 		var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
 		UIGraphicsEndImageContext()
 		return image
@@ -96,41 +91,6 @@ class HUEColorPicker: UIView {
 	override func drawRect(rect: CGRect) {
 		super.drawRect(rect)
 		
-//		UIColor.blackColor().set()
-//		var tempYPlace = currentSelectionY
-//		if tempYPlace < 0.0 {
-//			tempYPlace = 0.0
-//		}
-//		else if (tempYPlace >= self.frame.size.height) {
-//			tempYPlace = self.frame.size.height - 1.0
-//		}
-//		
-//		var tempXPlace = currentSelectionX
-//		if tempXPlace < 0.0 {
-//			tempXPlace = 0.0
-//		}
-//		else if (tempXPlace >= self.frame.size.width) {
-//			tempXPlace = self.frame.size.width - 1.0
-//		}
-//		
-//		var temp = (direction == .Horizontal ? CGRectMake(tempXPlace, 0, 1.0, self.frame.size.height) : CGRectMake(0, tempYPlace, self.frame.size.width, 1.0))
-//		UIRectFill(temp)
-		
-//		if direction == .Horizontal {
-//			for var x: Int = 0; x < Int(self.frame.size.width); ++x {
-//				UIColor(hue: CGFloat(CGFloat(x) / self.frame.size.width), saturation: 1.0, brightness: 1.0, alpha: 1.0).set()
-//				let temp = CGRectMake(CGFloat(x), 0, 1, self.frame.size.height)
-//				UIRectFill(temp)
-//			}
-//		}
-//		else {
-//			for var y: Int = 0; y < Int(self.frame.size.height); ++y {
-//				UIColor(hue: CGFloat(CGFloat(y) / self.frame.size.height), saturation: 1.0, brightness: 1.0, alpha: 1.0).set()
-//				let temp = CGRectMake(0, CGFloat(y), self.frame.size.width, 1)
-//				UIRectFill(temp)
-//			}
-//		}
-		
 		if hueImage != nil {
 			hueImage.drawInRect(rect)
 		}
@@ -139,10 +99,10 @@ class HUEColorPicker: UIView {
 		let circleRect = (direction == .Horizontal ? CGRectMake(currentSelectionX - radius * 0.5, 0, radius, radius) : CGRectMake(0, currentSelectionY - radius * 0.5, radius, radius))
 		let context = UIGraphicsGetCurrentContext();
 		
-		UIColor.whiteColor().set()
+		UIColor.blackColor().set()
 		
 		CGContextAddEllipseInRect(context, circleRect);
-		CGContextSetFillColor(context, CGColorGetComponents(UIColor.whiteColor().CGColor));
+		CGContextSetFillColor(context, CGColorGetComponents(UIColor.blackColor().CGColor));
 		CGContextFillPath(context);
 		CGContextStrokePath(context);
 	}
