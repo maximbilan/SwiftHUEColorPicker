@@ -120,11 +120,11 @@ class HUEColorPicker: UIView {
 		if hueImage != nil {
 			if direction == .Horizontal {
 				hueRect.size.width -= radius
-				hueRect.origin.x += radius * 0.5
+				hueRect.origin.x += halfRadius
 			}
 			else {
 				hueRect.size.height -= radius
-				hueRect.origin.y += radius * 0.5
+				hueRect.origin.y += halfRadius
 			}
 			hueImage.drawInRect(hueRect)
 		}
