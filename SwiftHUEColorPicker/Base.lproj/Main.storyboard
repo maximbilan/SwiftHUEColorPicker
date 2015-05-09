@@ -25,18 +25,18 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OLw-sp-lSq" customClass="HUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
-                                <rect key="frame" x="142" y="285" width="150" height="30"/>
+                                <rect key="frame" x="144" y="285" width="180" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1g4-1i-1Ns"/>
-                                    <constraint firstAttribute="width" constant="150" id="nDb-Nb-SeK"/>
+                                    <constraint firstAttribute="width" constant="180" id="nDb-Nb-SeK"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8i-h9-wfV" customClass="HUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
-                                <rect key="frame" x="385" y="225" width="30" height="150"/>
+                                <rect key="frame" x="383" y="210" width="30" height="180"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="9Wa-oT-Z03"/>
+                                    <constraint firstAttribute="height" constant="180" id="9Wa-oT-Z03"/>
                                     <constraint firstAttribute="width" constant="30" id="yV7-9b-3My"/>
                                 </constraints>
                             </view>
@@ -44,10 +44,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="U8i-h9-wfV" secondAttribute="centerY" id="074-fM-PTq"/>
-                            <constraint firstAttribute="centerX" secondItem="U8i-h9-wfV" secondAttribute="centerX" constant="-100" id="Bga-wn-yPX"/>
+                            <constraint firstAttribute="centerX" secondItem="U8i-h9-wfV" secondAttribute="centerX" constant="-98" id="Bga-wn-yPX"/>
                             <constraint firstAttribute="centerY" secondItem="Wjz-WT-9Xa" secondAttribute="centerY" constant="230" id="C03-Ao-M8W"/>
                             <constraint firstAttribute="centerY" secondItem="OLw-sp-lSq" secondAttribute="centerY" id="I9f-x1-U71"/>
-                            <constraint firstAttribute="centerX" secondItem="OLw-sp-lSq" secondAttribute="centerX" constant="83" id="Lmx-Nv-Qm7"/>
+                            <constraint firstAttribute="centerX" secondItem="OLw-sp-lSq" secondAttribute="centerX" constant="66" id="Lmx-Nv-Qm7"/>
                             <constraint firstAttribute="centerX" secondItem="Wjz-WT-9Xa" secondAttribute="centerX" id="Vb8-Dm-onM"/>
                         </constraints>
                     </view>
