@@ -147,26 +147,29 @@ class HUEColorPicker: UIView {
 //		[@"Hello, World!" drawInRect: textRect withAttributes: textFontAttributes];
 		
 		// set the text color to dark gray
-		let fieldColor: UIColor = UIColor.whiteColor()
+		let textColor: UIColor = UIColor.whiteColor()
 		
 		// set the font to Helvetica Neue 18
-		let fieldFont = UIFont(name: "Helvetica Neue", size: 18)
+		let textFont = UIFont(name: "Helvetica Neue", size: 12)
 		
 		// set the line spacing to 6
 		var paraStyle = NSMutableParagraphStyle()
-		paraStyle.lineSpacing = 6.0
+		//paraStyle.lineSpacing = 6.0
+		paraStyle.alignment = .Center
 		
 		// set the Obliqueness to 0.1
-		var skew = 0.1
+		//var skew = 0.1
 		
 		var attributes: NSDictionary = [
-			NSForegroundColorAttributeName: fieldColor,
+			NSForegroundColorAttributeName: textColor,
 			NSParagraphStyleAttributeName: paraStyle,
-			NSObliquenessAttributeName: skew,
-			NSFontAttributeName: fieldFont!]
+			//NSObliquenessAttributeName: skew,
+			NSFontAttributeName: textFont!]
 		
-		let str: NSString = "12"
-		str.drawInRect(circleRect, withAttributes: attributes as [NSObject : AnyObject])
+		let str: NSString = "250"
+		var textRect = circleRect
+		textRect.origin.y += (textRect.size.height - (textFont?.lineHeight)!) * 0.5
+		str.drawInRect(textRect, withAttributes: attributes as [NSObject : AnyObject])
 	}
 	
 	// Touch events
