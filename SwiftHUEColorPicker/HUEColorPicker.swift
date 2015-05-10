@@ -39,6 +39,10 @@ class HUEColorPicker: UIView {
 	private var currentSelectionY: CGFloat = 0.0
 	private var currentSelectionX: CGFloat = 0.0
 	private var hueImage: UIImage!
+	private var hueValue: CGFloat = 0.0
+	private var saturationValue: CGFloat = 0.0
+	private var brightnessValue: CGFloat = 0.0
+	private var alphaValue: CGFloat = 0.0
 	
 	// Initialization
 	
@@ -145,7 +149,9 @@ class HUEColorPicker: UIView {
 		var attributes: NSDictionary = [NSForegroundColorAttributeName: textColor,
 										NSParagraphStyleAttributeName: textParagraphStyle,
 										NSFontAttributeName: textFont!]
-		let text: NSString = "250"
+		
+		let textValue: Int = Int(hueValue * 360)
+		let text: NSString = "\(textValue)"
 		var textRect = circleRect
 		textRect.origin.y += (textRect.size.height - (textFont?.lineHeight)!) * 0.5
 		text.drawInRect(textRect, withAttributes: attributes as [NSObject : AnyObject])
@@ -196,9 +202,9 @@ class HUEColorPicker: UIView {
 			currentSelectionY = self.frame.size.height - halfOffset
 		}
 		
-		let hue: CGFloat = (direction == .Horizontal ? CGFloat((currentSelectionX - halfOffset) / (self.frame.size.width - offset))
-													 : CGFloat((currentSelectionY - halfOffset) / (self.frame.size.height - offset)))
-		color = UIColor(hue: hue, saturation: 1.0, brightness: 1.0, alpha: 1.0)
+		hueValue = (direction == .Horizontal ? CGFloat((currentSelectionX - halfOffset) / (self.frame.size.width - offset))
+											 : CGFloat((currentSelectionY - halfOffset) / (self.frame.size.height - offset)))
+		color = UIColor(hue: hueValue, saturation: 1.0, brightness: 1.0, alpha: 1.0)
 		
 		if delegate != nil {
 			delegate.valuePicked(color, type: type)
