@@ -35,14 +35,14 @@ class HUEColorPicker: UIView {
 		}
 	}
 	
-	private var color: UIColor!
+	private var color: UIColor = UIColor.whiteColor()
 	private var currentSelectionY: CGFloat = 0.0
 	private var currentSelectionX: CGFloat = 0.0
 	private var hueImage: UIImage!
 	private var hueValue: CGFloat = 0.0
-	private var saturationValue: CGFloat = 0.0
-	private var brightnessValue: CGFloat = 0.0
-	private var alphaValue: CGFloat = 0.0
+	private var saturationValue: CGFloat = 1.0
+	private var brightnessValue: CGFloat = 1.0
+	private var alphaValue: CGFloat = 1.0
 	
 	// Initialization
 	
@@ -71,6 +71,7 @@ class HUEColorPicker: UIView {
 	}
 	
 	func generateHUEImage(size: CGSize) -> UIImage {
+		
 		var rect = CGRectMake(0, 0, size.width, size.height)
 		UIGraphicsBeginImageContextWithOptions(size, false, 0)
 		
@@ -78,14 +79,44 @@ class HUEColorPicker: UIView {
 		
 		if direction == .Horizontal {
 			for var x: Int = 0; x < Int(size.width); ++x {
-				UIColor(hue: CGFloat(CGFloat(x) / size.width), saturation: 1.0, brightness: 1.0, alpha: 1.0).set()
+				
+				switch type {
+				case .Color:
+					UIColor(hue: CGFloat(CGFloat(x) / size.width), saturation: saturationValue, brightness: brightnessValue, alpha: alphaValue).set()
+					break
+				case .Saturation:
+					UIColor(hue: hueValue, saturation: CGFloat(CGFloat(x) / size.width), brightness: brightnessValue, alpha: alphaValue).set()
+					break
+				case .Brightness:
+					UIColor(hue: hueValue, saturation: saturationValue, brightness: CGFloat(CGFloat(x) / size.width), alpha: alphaValue).set()
+					break
+				case .Alpha:
+					UIColor(hue: hueValue, saturation: saturationValue, brightness: brightnessValue, alpha: CGFloat(CGFloat(x) / size.width)).set()
+					break
+				}
+				
 				let temp = CGRectMake(CGFloat(x), 0, 1, size.height)
 				UIRectFill(temp)
 			}
 		}
 		else {
 			for var y: Int = 0; y < Int(size.height); ++y {
-				UIColor(hue: CGFloat(CGFloat(y) / size.height), saturation: 1.0, brightness: 1.0, alpha: 1.0).set()
+				
+				switch type {
+				case .Color:
+					UIColor(hue: CGFloat(CGFloat(y) / size.height), saturation: saturationValue, brightness: brightnessValue, alpha: alphaValue).set()
+					break
+				case .Saturation:
+					UIColor(hue: hueValue, saturation: CGFloat(CGFloat(y) / size.height), brightness: brightnessValue, alpha: alphaValue).set()
+					break
+				case .Brightness:
+					UIColor(hue: hueValue, saturation: saturationValue, brightness: CGFloat(CGFloat(y) / size.height), alpha: alphaValue).set()
+					break
+				case .Alpha:
+					UIColor(hue: hueValue, saturation: saturationValue, brightness: brightnessValue, alpha: CGFloat(CGFloat(y) / size.height)).set()
+					break
+				}
+				
 				let temp = CGRectMake(0, CGFloat(y), size.width, 1)
 				UIRectFill(temp)
 			}
