@@ -77,18 +77,6 @@ class HUEColorPicker: UIView {
 		update()
 	}
 	
-	func update() {
-		let offset = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
-		var size = self.frame.size
-		if direction == .Horizontal {
-			size.width -= offset
-		}
-		else {
-			size.height -= offset
-		}
-		hueImage = generateHUEImage(size)
-	}
-	
 	func generateHUEImage(size: CGSize) -> UIImage {
 		
 		var rect = CGRectMake(0, 0, size.width, size.height)
@@ -146,6 +134,18 @@ class HUEColorPicker: UIView {
 		return image
 	}
 	
+	func update() {
+		let offset = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
+		var size = self.frame.size
+		if direction == .Horizontal {
+			size.width -= offset
+		}
+		else {
+			size.height -= offset
+		}
+		hueImage = generateHUEImage(size)
+	}
+	
 	// Drawing
 	
 	override func drawRect(rect: CGRect) {
@@ -200,7 +200,23 @@ class HUEColorPicker: UIView {
 										NSParagraphStyleAttributeName: textParagraphStyle,
 										NSFontAttributeName: textFont!]
 		
-		let textValue: Int = Int(hueValue * (type == .Color ? 360 : 100))
+		var value: CGFloat = 0;
+		switch type {
+		case .Color:
+			value = hueValue
+			break
+		case .Saturation:
+			value = saturationValue
+			break
+		case .Brightness:
+			value = brightnessValue
+			break
+		case .Alpha:
+			value = alphaValue
+			break
+		}
+		
+		let textValue: Int = Int(value * (type == .Color ? 360 : 100))
 		let text: NSString = "\(textValue)"
 		var textRect = circleRect
 		textRect.origin.y += (textRect.size.height - (textFont?.lineHeight)!) * 0.5
