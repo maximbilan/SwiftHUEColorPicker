@@ -137,39 +137,18 @@ class HUEColorPicker: UIView {
 		CGContextFillPath(context);
 		CGContextStrokePath(context);
 		
-		
-//		CGRect textRect = CGRectMake(xPosition, yPosition, canvasWidth, canvasHeight);
-//		NSMutableParagraphStyle* textStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
-//		textStyle.alignment = NSTextAlignmentLeft;
-//		
-//		NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont fontWithName: @"Helvetica" size: 12], NSForegroundColorAttributeName: UIColor.redColor, NSParagraphStyleAttributeName: textStyle};
-//		
-//		[@"Hello, World!" drawInRect: textRect withAttributes: textFontAttributes];
-		
-		// set the text color to dark gray
 		let textColor: UIColor = UIColor.whiteColor()
-		
-		// set the font to Helvetica Neue 18
 		let textFont = UIFont(name: "Helvetica Neue", size: 12)
+		var textParagraphStyle = NSMutableParagraphStyle()
+		textParagraphStyle.alignment = .Center
 		
-		// set the line spacing to 6
-		var paraStyle = NSMutableParagraphStyle()
-		//paraStyle.lineSpacing = 6.0
-		paraStyle.alignment = .Center
-		
-		// set the Obliqueness to 0.1
-		//var skew = 0.1
-		
-		var attributes: NSDictionary = [
-			NSForegroundColorAttributeName: textColor,
-			NSParagraphStyleAttributeName: paraStyle,
-			//NSObliquenessAttributeName: skew,
-			NSFontAttributeName: textFont!]
-		
-		let str: NSString = "250"
+		var attributes: NSDictionary = [NSForegroundColorAttributeName: textColor,
+										NSParagraphStyleAttributeName: textParagraphStyle,
+										NSFontAttributeName: textFont!]
+		let text: NSString = "250"
 		var textRect = circleRect
 		textRect.origin.y += (textRect.size.height - (textFont?.lineHeight)!) * 0.5
-		str.drawInRect(textRect, withAttributes: attributes as [NSObject : AnyObject])
+		text.drawInRect(textRect, withAttributes: attributes as [NSObject : AnyObject])
 	}
 	
 	// Touch events
