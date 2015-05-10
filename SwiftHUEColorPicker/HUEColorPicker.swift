@@ -89,16 +89,16 @@ class HUEColorPicker: UIView {
 				
 				switch type {
 				case .Color:
-					UIColor(hue: CGFloat(CGFloat(x) / size.width), saturation: saturationValue, brightness: brightnessValue, alpha: alphaValue).set()
+					UIColor(hue: CGFloat(CGFloat(x) / size.width), saturation: 1.0, brightness: 1.0, alpha: 1.0).set()
 					break
 				case .Saturation:
-					UIColor(hue: hueValue, saturation: CGFloat(CGFloat(x) / size.width), brightness: brightnessValue, alpha: alphaValue).set()
+					UIColor(hue: hueValue, saturation: CGFloat(CGFloat(x) / size.width), brightness: 1.0, alpha: 1.0).set()
 					break
 				case .Brightness:
-					UIColor(hue: hueValue, saturation: saturationValue, brightness: CGFloat(CGFloat(x) / size.width), alpha: alphaValue).set()
+					UIColor(hue: hueValue, saturation: 1.0, brightness: CGFloat(CGFloat(x) / size.width), alpha: 1.0).set()
 					break
 				case .Alpha:
-					UIColor(hue: hueValue, saturation: saturationValue, brightness: brightnessValue, alpha: CGFloat(CGFloat(x) / size.width)).set()
+					UIColor(hue: hueValue, saturation: 1.0, brightness: 1.0, alpha: CGFloat(CGFloat(x) / size.width)).set()
 					break
 				}
 				
