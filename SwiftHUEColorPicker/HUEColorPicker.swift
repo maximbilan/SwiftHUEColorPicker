@@ -136,6 +136,7 @@ class HUEColorPicker: UIView {
 	
 	func update() {
 		let offset = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
+		let halfOffset = offset * 0.5
 		var size = self.frame.size
 		if direction == .Horizontal {
 			size.width -= offset
@@ -143,6 +144,25 @@ class HUEColorPicker: UIView {
 		else {
 			size.height -= offset
 		}
+		
+		var value: CGFloat = 0
+		switch type {
+		case .Color:
+			value = hueValue
+			break
+		case .Saturation:
+			value = saturationValue
+			break
+		case .Brightness:
+			value = brightnessValue
+			break
+		case .Alpha:
+			value = alphaValue
+			break
+		}
+		currentSelectionX = value * (self.frame.size.width - offset) + halfOffset
+		currentSelectionY = value * (self.frame.size.height - offset) + halfOffset
+		
 		hueImage = generateHUEImage(size)
 	}
 	

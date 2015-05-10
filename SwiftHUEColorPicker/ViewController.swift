@@ -47,6 +47,9 @@ class ViewController: UIViewController, HUEColorPickerDelegate {
 		if type == HUEColorPicker.PickerType.Color {
 			horizontalSaturationPicker.currentColor = color
 		}
+		else if type == HUEColorPicker.PickerType.Saturation {
+			horizontalHUEColorPicker.currentColor = color
+		}
 	}
 	
 }
