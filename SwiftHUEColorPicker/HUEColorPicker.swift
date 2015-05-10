@@ -33,9 +33,24 @@ class HUEColorPicker: UIView {
 		get {
 			return color
 		}
+		set(newCurrentColor) {
+			color = newCurrentColor
+			var hue: CGFloat = 0
+			var s: CGFloat = 0
+			var b: CGFloat = 0
+			var a: CGFloat = 0
+			if color.getHue(&hue, saturation: &s, brightness: &b, alpha: &a) {
+				hueValue = hue
+				saturationValue = s
+				brightnessValue = b
+				alphaValue = a
+				update()
+				setNeedsDisplay()
+			}
+		}
 	}
 	
-	private var color: UIColor = UIColor.whiteColor()
+	private var color: UIColor = UIColor.clearColor()
 	private var currentSelectionY: CGFloat = 0.0
 	private var currentSelectionX: CGFloat = 0.0
 	private var hueImage: UIImage!
@@ -59,6 +74,10 @@ class HUEColorPicker: UIView {
 	override func layoutSubviews() {
 		super.layoutSubviews()
 		
+		update()
+	}
+	
+	func update() {
 		let offset = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
 		var size = self.frame.size
 		if direction == .Horizontal {

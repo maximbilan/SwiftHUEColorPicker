@@ -43,6 +43,10 @@ class ViewController: UIViewController, HUEColorPickerDelegate {
 
 	func valuePicked(color: UIColor, type: HUEColorPicker.PickerType) {
 		colorView.backgroundColor = color
+		
+		if type == HUEColorPicker.PickerType.Color {
+			horizontalSaturationPicker.currentColor = color
+		}
 	}
 	
 }
