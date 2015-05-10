@@ -18,13 +18,14 @@ class ViewController: UIViewController, HUEColorPickerDelegate {
 	@IBOutlet weak var horizontalBrightnessPicker: HUEColorPicker!
 	@IBOutlet weak var horizontalAlphaPicker: HUEColorPicker!
 	
+	// Vertical pickers
 	@IBOutlet weak var verticalColorPicker: HUEColorPicker!
-	
-	
+	@IBOutlet weak var verticalSaturationPicker: HUEColorPicker!
+	@IBOutlet weak var verticalBrightnessPicker: HUEColorPicker!
+	@IBOutlet weak var verticalAlphaPicker: HUEColorPicker!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
 		
 		horizontalColorPicker.delegate = self
 		horizontalColorPicker.direction = HUEColorPicker.PickerDirection.Horizontal
@@ -44,6 +45,19 @@ class ViewController: UIViewController, HUEColorPickerDelegate {
 		
 		verticalColorPicker.delegate = self
 		verticalColorPicker.direction = HUEColorPicker.PickerDirection.Vertical
+		verticalColorPicker.type = HUEColorPicker.PickerType.Color
+		
+		verticalSaturationPicker.delegate = self
+		verticalSaturationPicker.direction = HUEColorPicker.PickerDirection.Vertical
+		verticalSaturationPicker.type = HUEColorPicker.PickerType.Saturation
+		
+		verticalBrightnessPicker.delegate = self
+		verticalBrightnessPicker.direction = HUEColorPicker.PickerDirection.Vertical
+		verticalBrightnessPicker.type = HUEColorPicker.PickerType.Brightness
+		
+		verticalAlphaPicker.delegate = self
+		verticalAlphaPicker.direction = HUEColorPicker.PickerDirection.Vertical
+		verticalAlphaPicker.type = HUEColorPicker.PickerType.Alpha
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -59,21 +73,33 @@ class ViewController: UIViewController, HUEColorPickerDelegate {
 			horizontalSaturationPicker.currentColor = color
 			horizontalBrightnessPicker.currentColor = color
 			horizontalAlphaPicker.currentColor = color
+			verticalSaturationPicker.currentColor = color
+			verticalBrightnessPicker.currentColor = color
+			verticalAlphaPicker.currentColor = color
 			break
 		case HUEColorPicker.PickerType.Saturation:
 			horizontalColorPicker.currentColor = color
 			horizontalBrightnessPicker.currentColor = color
 			horizontalAlphaPicker.currentColor = color
+			verticalColorPicker.currentColor = color
+			verticalBrightnessPicker.currentColor = color
+			verticalAlphaPicker.currentColor = color
 			break
 		case HUEColorPicker.PickerType.Brightness:
 			horizontalColorPicker.currentColor = color
 			horizontalSaturationPicker.currentColor = color
 			horizontalAlphaPicker.currentColor = color
+			verticalColorPicker.currentColor = color
+			verticalSaturationPicker.currentColor = color
+			verticalAlphaPicker.currentColor = color
 			break
 		case HUEColorPicker.PickerType.Alpha:
 			horizontalColorPicker.currentColor = color
 			horizontalSaturationPicker.currentColor = color
 			horizontalBrightnessPicker.currentColor = color
+			verticalColorPicker.currentColor = color
+			verticalSaturationPicker.currentColor = color
+			verticalBrightnessPicker.currentColor = color
 			break
 		}
 	}
