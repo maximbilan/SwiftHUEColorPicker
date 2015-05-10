@@ -14,6 +14,8 @@ class ViewController: UIViewController, HUEColorPickerDelegate {
 	
 	@IBOutlet weak var horizontalHUEColorPicker: HUEColorPicker!
 	@IBOutlet weak var verticalHUEColorPicker: HUEColorPicker!
+	@IBOutlet weak var horizontalSaturationPicker: HUEColorPicker!
+	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -28,6 +30,10 @@ class ViewController: UIViewController, HUEColorPickerDelegate {
 		
 		verticalHUEColorPicker.delegate = self
 		verticalHUEColorPicker.direction = HUEColorPicker.PickerDirection.Vertical
+		
+		horizontalSaturationPicker.delegate = self
+		horizontalSaturationPicker.direction = HUEColorPicker.PickerDirection.Horizontal
+		horizontalSaturationPicker.type = HUEColorPicker.PickerType.Saturation
 	}
 
 	override func didReceiveMemoryWarning() {
