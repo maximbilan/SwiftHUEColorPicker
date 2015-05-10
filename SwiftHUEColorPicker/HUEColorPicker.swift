@@ -181,7 +181,7 @@ class HUEColorPicker: UIView {
 										NSParagraphStyleAttributeName: textParagraphStyle,
 										NSFontAttributeName: textFont!]
 		
-		let textValue: Int = Int(hueValue * 360)
+		let textValue: Int = Int(hueValue * (type == .Color ? 360 : 100))
 		let text: NSString = "\(textValue)"
 		var textRect = circleRect
 		textRect.origin.y += (textRect.size.height - (textFont?.lineHeight)!) * 0.5
@@ -233,9 +233,25 @@ class HUEColorPicker: UIView {
 			currentSelectionY = self.frame.size.height - halfOffset
 		}
 		
-		hueValue = (direction == .Horizontal ? CGFloat((currentSelectionX - halfOffset) / (self.frame.size.width - offset))
-											 : CGFloat((currentSelectionY - halfOffset) / (self.frame.size.height - offset)))
-		color = UIColor(hue: hueValue, saturation: 1.0, brightness: 1.0, alpha: 1.0)
+		let value = (direction == .Horizontal ? CGFloat((currentSelectionX - halfOffset) / (self.frame.size.width - offset))
+											  : CGFloat((currentSelectionY - halfOffset) / (self.frame.size.height - offset)))
+		
+		switch type {
+		case .Color:
+			hueValue = value
+			break
+		case .Saturation:
+			saturationValue = value
+			break
+		case .Brightness:
+			brightnessValue = value
+			break
+		case .Alpha:
+			alphaValue = value
+			break
+		}
+		
+		color = UIColor(hue: hueValue, saturation: saturationValue, brightness: brightnessValue, alpha: alphaValue)
 		
 		if delegate != nil {
 			delegate.valuePicked(color, type: type)
