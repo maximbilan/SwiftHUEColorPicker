@@ -24,12 +24,28 @@
                                     <constraint firstAttribute="height" constant="100" id="u0Q-z5-enS"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OLw-sp-lSq" customClass="HUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OLw-sp-lSq" userLabel="Horizontal Color Picker" customClass="HUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
                                 <rect key="frame" x="144" y="285" width="180" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1g4-1i-1Ns"/>
                                     <constraint firstAttribute="width" constant="180" id="nDb-Nb-SeK"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eso-s1-hgX" userLabel="Saturation Color Picker" customClass="HUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
+                                <rect key="frame" x="144" y="344" width="180" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="MM5-Un-Wjg"/>
+                                    <constraint firstAttribute="width" constant="180" id="waW-f6-OVa"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IEI-9Z-Khn" userLabel="Brightness Color Picker" customClass="HUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
+                                <rect key="frame" x="144" y="393" width="180" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="NvX-AO-043"/>
+                                    <constraint firstAttribute="height" constant="30" id="Tv0-Yu-MC2"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8i-h9-wfV" customClass="HUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
@@ -40,12 +56,12 @@
                                     <constraint firstAttribute="width" constant="30" id="yV7-9b-3My"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eso-s1-hgX" customClass="HUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
-                                <rect key="frame" x="144" y="344" width="180" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDS-Nj-8wh" userLabel="Alpha Color Picker" customClass="HUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
+                                <rect key="frame" x="144" y="448" width="180" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="MM5-Un-Wjg"/>
-                                    <constraint firstAttribute="width" constant="180" id="waW-f6-OVa"/>
+                                    <constraint firstAttribute="height" constant="30" id="U0b-bS-ipH"/>
+                                    <constraint firstAttribute="width" constant="180" id="wvA-UV-fId"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -57,19 +73,26 @@
                             <constraint firstAttribute="centerX" secondItem="U8i-h9-wfV" secondAttribute="centerX" constant="-98" id="Bga-wn-yPX"/>
                             <constraint firstAttribute="centerY" secondItem="Wjz-WT-9Xa" secondAttribute="centerY" constant="230" id="C03-Ao-M8W"/>
                             <constraint firstAttribute="centerY" secondItem="OLw-sp-lSq" secondAttribute="centerY" id="I9f-x1-U71"/>
+                            <constraint firstAttribute="centerX" secondItem="UDS-Nj-8wh" secondAttribute="centerX" constant="66" id="Lc2-QX-i8I"/>
                             <constraint firstAttribute="centerX" secondItem="OLw-sp-lSq" secondAttribute="centerX" constant="66" id="Lmx-Nv-Qm7"/>
+                            <constraint firstAttribute="centerY" secondItem="IEI-9Z-Khn" secondAttribute="centerY" constant="-108" id="N48-3D-zcB"/>
                             <constraint firstAttribute="centerX" secondItem="Wjz-WT-9Xa" secondAttribute="centerX" id="Vb8-Dm-onM"/>
+                            <constraint firstAttribute="centerY" secondItem="UDS-Nj-8wh" secondAttribute="centerY" constant="-163" id="uEK-0k-h53"/>
+                            <constraint firstAttribute="centerX" secondItem="IEI-9Z-Khn" secondAttribute="centerX" constant="66" id="uhK-Kk-fFT"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="colorView" destination="Wjz-WT-9Xa" id="mnR-lj-lxl"/>
-                        <outlet property="horizontalHUEColorPicker" destination="OLw-sp-lSq" id="URN-7k-zAh"/>
+                        <outlet property="horizontalAlphaPicker" destination="UDS-Nj-8wh" id="Ksb-0e-C20"/>
+                        <outlet property="horizontalBrightnessPicker" destination="IEI-9Z-Khn" id="p5t-IC-fO7"/>
+                        <outlet property="horizontalColorPicker" destination="OLw-sp-lSq" id="Z0Q-gt-1P6"/>
                         <outlet property="horizontalSaturationPicker" destination="eso-s1-hgX" id="fVL-ka-KPf"/>
-                        <outlet property="verticalHUEColorPicker" destination="U8i-h9-wfV" id="woO-zu-ltt"/>
+                        <outlet property="verticalColorPicker" destination="U8i-h9-wfV" id="qHc-iX-RLL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="302" y="398"/>
         </scene>
     </scenes>
 </document>

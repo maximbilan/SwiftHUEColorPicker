@@ -12,28 +12,38 @@ class ViewController: UIViewController, HUEColorPickerDelegate {
 
 	@IBOutlet weak var colorView: UIView!
 	
-	@IBOutlet weak var horizontalHUEColorPicker: HUEColorPicker!
-	@IBOutlet weak var verticalHUEColorPicker: HUEColorPicker!
+	// Horizontal pickers
+	@IBOutlet weak var horizontalColorPicker: HUEColorPicker!
 	@IBOutlet weak var horizontalSaturationPicker: HUEColorPicker!
+	@IBOutlet weak var horizontalBrightnessPicker: HUEColorPicker!
+	@IBOutlet weak var horizontalAlphaPicker: HUEColorPicker!
+	
+	@IBOutlet weak var verticalColorPicker: HUEColorPicker!
+	
 	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 		
-//		let brushSettings = BrushSettingsPicker.instantiateFromNib()
-//		brushSettings.center = self.view.center
-//		self.view.addSubview(brushSettings)
-		
-		horizontalHUEColorPicker.delegate = self
-		horizontalHUEColorPicker.direction = HUEColorPicker.PickerDirection.Horizontal
-		
-		verticalHUEColorPicker.delegate = self
-		verticalHUEColorPicker.direction = HUEColorPicker.PickerDirection.Vertical
+		horizontalColorPicker.delegate = self
+		horizontalColorPicker.direction = HUEColorPicker.PickerDirection.Horizontal
+		horizontalSaturationPicker.type = HUEColorPicker.PickerType.Color
 		
 		horizontalSaturationPicker.delegate = self
 		horizontalSaturationPicker.direction = HUEColorPicker.PickerDirection.Horizontal
 		horizontalSaturationPicker.type = HUEColorPicker.PickerType.Saturation
+		
+		horizontalBrightnessPicker.delegate = self
+		horizontalBrightnessPicker.direction = HUEColorPicker.PickerDirection.Horizontal
+		horizontalBrightnessPicker.type = HUEColorPicker.PickerType.Brightness
+		
+		horizontalAlphaPicker.delegate = self
+		horizontalAlphaPicker.direction = HUEColorPicker.PickerDirection.Horizontal
+		horizontalAlphaPicker.type = HUEColorPicker.PickerType.Alpha
+		
+		verticalColorPicker.delegate = self
+		verticalColorPicker.direction = HUEColorPicker.PickerDirection.Vertical
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -44,11 +54,27 @@ class ViewController: UIViewController, HUEColorPickerDelegate {
 	func valuePicked(color: UIColor, type: HUEColorPicker.PickerType) {
 		colorView.backgroundColor = color
 		
-		if type == HUEColorPicker.PickerType.Color {
+		switch type {
+		case HUEColorPicker.PickerType.Color:
 			horizontalSaturationPicker.currentColor = color
-		}
-		else if type == HUEColorPicker.PickerType.Saturation {
-			horizontalHUEColorPicker.currentColor = color
+			horizontalBrightnessPicker.currentColor = color
+			horizontalAlphaPicker.currentColor = color
+			break
+		case HUEColorPicker.PickerType.Saturation:
+			horizontalColorPicker.currentColor = color
+			horizontalBrightnessPicker.currentColor = color
+			horizontalAlphaPicker.currentColor = color
+			break
+		case HUEColorPicker.PickerType.Brightness:
+			horizontalColorPicker.currentColor = color
+			horizontalSaturationPicker.currentColor = color
+			horizontalAlphaPicker.currentColor = color
+			break
+		case HUEColorPicker.PickerType.Alpha:
+			horizontalColorPicker.currentColor = color
+			horizontalSaturationPicker.currentColor = color
+			horizontalBrightnessPicker.currentColor = color
+			break
 		}
 	}
 	
