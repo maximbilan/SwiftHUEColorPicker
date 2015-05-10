@@ -40,12 +40,20 @@ class HUEColorPicker: UIView {
 			var b: CGFloat = 0
 			var a: CGFloat = 0
 			if color.getHue(&hue, saturation: &s, brightness: &b, alpha: &a) {
+				var needUpdate = false
+				if hueValue != hue {
+					needUpdate = true
+				}
+				
 				hueValue = hue
 				saturationValue = s
 				brightnessValue = b
 				alphaValue = a
-				update()
-				setNeedsDisplay()
+				
+				if needUpdate && hueValue > 0 && hueValue < 1 {
+					update()
+					setNeedsDisplay()
+				}
 			}
 		}
 	}
@@ -160,6 +168,7 @@ class HUEColorPicker: UIView {
 			value = alphaValue
 			break
 		}
+		
 		currentSelectionX = value * (self.frame.size.width - offset) + halfOffset
 		currentSelectionY = value * (self.frame.size.height - offset) + halfOffset
 		
