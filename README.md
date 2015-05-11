@@ -20,8 +20,9 @@ pod 'SwiftHUEColorPicker'
 </br>
 ![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img4.png)
 </br>
+</br>
 <b>How to use:</b>
-
+</br>
 You can create from storyboard or XIB. Or create manually:
 <pre>
 let picker = SwiftHUEColorPicker()
