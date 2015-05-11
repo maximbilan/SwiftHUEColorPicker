@@ -11,3 +11,13 @@ Simple iOS HUE color picker.</br>
 </br>
 ![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img4.png)
 </br>
+
+<b>Manual installation:</b>
+<pre>
+Copy SwiftHUEColorPicker.swift to your project.
+</pre>
+
+<b>Cocoapods:</b>
+<pre>
+pod 'SwiftHUEColorPicker'
+</pre>
