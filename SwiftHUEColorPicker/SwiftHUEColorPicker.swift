@@ -30,6 +30,11 @@ class SwiftHUEColorPicker: UIView {
 		case Vertical
 	}
 	
+	// Constants
+	
+	let HUEMaxValue: CGFloat = 360
+	let PercentMaxValue: CGFloat = 100
+	
 	// Main public properties
 	
 	var delegate: SwiftHUEColorPickerDelegate!
@@ -261,7 +266,7 @@ class SwiftHUEColorPicker: UIView {
 			break
 		}
 		
-		let textValue: Int = Int(value * (type == .Color ? 360 : 100))
+		let textValue: Int = Int(value * (type == .Color ? HUEMaxValue : PercentMaxValue))
 		let text: NSString = "\(textValue)"
 		var textRect = circleRect
 		textRect.origin.y += (textRect.size.height - (labelFont?.lineHeight)!) * 0.5
