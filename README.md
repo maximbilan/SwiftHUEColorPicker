@@ -22,8 +22,7 @@ pod 'SwiftHUEColorPicker'
 </br>
 </br>
 <b>How to use:</b>
-</br>
-You can create from storyboard or XIB. Or create manually:
+</br>You can create from storyboard or XIB. Or create manually:
 <pre>
 let picker = SwiftHUEColorPicker()
 </pre>
