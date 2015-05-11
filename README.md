@@ -7,3 +7,5 @@ Simple iOS HUE color picker.</br>
 Also you can change saturation, brightness and alpha values.
 And control has customization. You can customize the label:
 ![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img3.png)
+Or appearance:
+![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img4.png)
