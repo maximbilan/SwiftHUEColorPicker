@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6DC18B541B00F9B800F1C99B /* SwiftHUEColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC18B531B00F9B800F1C99B /* SwiftHUEColorPicker.swift */; };
+		6DC18B561B0121A200F1C99B /* SwiftHUEColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC18B551B0121A200F1C99B /* SwiftHUEColorPicker.swift */; };
 		6DC3181E1AFA29AC00C8D9EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC3181D1AFA29AC00C8D9EE /* AppDelegate.swift */; };
 		6DC318201AFA29AC00C8D9EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC3181F1AFA29AC00C8D9EE /* ViewController.swift */; };
 		6DC318231AFA29AC00C8D9EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DC318211AFA29AC00C8D9EE /* Main.storyboard */; };
@@ -27,7 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6DC18B531B00F9B800F1C99B /* SwiftHUEColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHUEColorPicker.swift; sourceTree = "<group>"; };
+		6DC18B551B0121A200F1C99B /* SwiftHUEColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftHUEColorPicker.swift; path = Sources/SwiftHUEColorPicker.swift; sourceTree = "<group>"; };
 		6DC318181AFA29AC00C8D9EE /* SwiftHUEColorPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftHUEColorPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DC3181C1AFA29AC00C8D9EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DC3181D1AFA29AC00C8D9EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,9 +79,9 @@
 		6DC3181A1AFA29AC00C8D9EE /* SwiftHUEColorPicker */ = {
 			isa = PBXGroup;
 			children = (
+				6DC18B551B0121A200F1C99B /* SwiftHUEColorPicker.swift */,
 				6DC3181D1AFA29AC00C8D9EE /* AppDelegate.swift */,
 				6DC3181F1AFA29AC00C8D9EE /* ViewController.swift */,
-				6DC18B531B00F9B800F1C99B /* SwiftHUEColorPicker.swift */,
 				6DC318211AFA29AC00C8D9EE /* Main.storyboard */,
 				6DC318261AFA29AC00C8D9EE /* LaunchScreen.xib */,
 				6DC318241AFA29AC00C8D9EE /* Images.xcassets */,
@@ -215,7 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DC18B541B00F9B800F1C99B /* SwiftHUEColorPicker.swift in Sources */,
+				6DC18B561B0121A200F1C99B /* SwiftHUEColorPicker.swift in Sources */,
 				6DC318201AFA29AC00C8D9EE /* ViewController.swift in Sources */,
 				6DC3181E1AFA29AC00C8D9EE /* AppDelegate.swift in Sources */,
 			);
