@@ -45,3 +45,4 @@ Type:
 picker.type = SwiftHUEColorPicker.PickerType.Color // Color, Saturation, Brightness, Alpha
 </pre>
 
+Please see example for using SwiftHUEColorPicker in this repository.
