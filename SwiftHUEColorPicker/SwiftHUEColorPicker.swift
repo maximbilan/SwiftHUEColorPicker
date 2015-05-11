@@ -71,9 +71,10 @@ class SwiftHUEColorPicker: UIView {
 	
 	// Additional public properties
 	
-	let labelFontColor: UIColor = UIColor.whiteColor()
-	let labelBackgroundColor: UIColor = UIColor.blackColor()
+	var labelFontColor: UIColor = UIColor.whiteColor()
+	var labelBackgroundColor: UIColor = UIColor.blackColor()
 	var labelFont = UIFont(name: "Helvetica Neue", size: 12)
+	var cornerRadius: CGFloat = 10.0
 	
 	// Private properties
 	
@@ -111,7 +112,7 @@ class SwiftHUEColorPicker: UIView {
 		var rect = CGRectMake(0, 0, size.width, size.height)
 		UIGraphicsBeginImageContextWithOptions(size, false, 0)
 		
-		UIBezierPath(roundedRect: rect, cornerRadius: 10.0).addClip()
+		UIBezierPath(roundedRect: rect, cornerRadius: cornerRadius).addClip()
 		
 		if direction == .Horizontal {
 			for var x: Int = 0; x < Int(size.width); ++x {
