@@ -20,3 +20,18 @@ pod 'SwiftHUEColorPicker'
 </br>
 ![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img4.png)
 </br>
+<b>How to use:</b>
+
+You can create from storyboard or XIB. Or create manually:
+<pre>
+let picker = SwiftHUEColorPicker()
+</pre>
+For handling changing of the values:
+<pre>
+picker.delegate = self
+</pre>
+And define the method:
+<pre>
+func valuePicked(color: UIColor, type: SwiftHUEColorPicker.PickerType) {
+}
+</pre>
