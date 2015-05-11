@@ -34,3 +34,14 @@ picker.delegate = self
 func valuePicked(color: UIColor, type: SwiftHUEColorPicker.PickerType) {
 }
 </pre>
+
+Direction:
+<pre>
+picker.direction = SwiftHUEColorPicker.PickerDirection.Vertical // Vertical and horizontal
+</pre>
+
+Type:
+<pre>
+picker.type = SwiftHUEColorPicker.PickerType.Color // Color, Saturation, Brightness, Alpha
+</pre>
+
