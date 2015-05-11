@@ -30,7 +30,7 @@ class SwiftHUEColorPicker: UIView {
 		case Vertical
 	}
 	
-	// Public properties
+	// Main public properties
 	
 	var delegate: SwiftHUEColorPickerDelegate!
 	var type: PickerType = .Color
@@ -63,6 +63,12 @@ class SwiftHUEColorPicker: UIView {
 			}
 		}
 	}
+	
+	// Additional public properties
+	
+	let labelFontColor: UIColor = UIColor.whiteColor()
+	let labelBackgroundColor: UIColor = UIColor.blackColor()
+	var labelFont = UIFont(name: "Helvetica Neue", size: 12)
 	
 	// Private properties
 	
@@ -210,7 +216,7 @@ class SwiftHUEColorPicker: UIView {
 		}
 		
 		let circleRect = (direction == .Horizontal ? CGRectMake(circleX, 0, radius, radius) : CGRectMake(0, circleY, radius, radius))
-		let circleColor = UIColor.blackColor()
+		let circleColor = labelBackgroundColor
 		var hueRect = rect
 		
 		if hueImage != nil {
@@ -232,14 +238,12 @@ class SwiftHUEColorPicker: UIView {
 		CGContextFillPath(context);
 		CGContextStrokePath(context);
 		
-		let textColor: UIColor = UIColor.whiteColor()
-		let textFont = UIFont(name: "Helvetica Neue", size: 12)
 		var textParagraphStyle = NSMutableParagraphStyle()
 		textParagraphStyle.alignment = .Center
 		
-		var attributes: NSDictionary = [NSForegroundColorAttributeName: textColor,
+		var attributes: NSDictionary = [NSForegroundColorAttributeName: labelFontColor,
 										NSParagraphStyleAttributeName: textParagraphStyle,
-										NSFontAttributeName: textFont!]
+										NSFontAttributeName: labelFont!]
 		
 		var value: CGFloat = 0;
 		switch type {
@@ -260,7 +264,7 @@ class SwiftHUEColorPicker: UIView {
 		let textValue: Int = Int(value * (type == .Color ? 360 : 100))
 		let text: NSString = "\(textValue)"
 		var textRect = circleRect
-		textRect.origin.y += (textRect.size.height - (textFont?.lineHeight)!) * 0.5
+		textRect.origin.y += (textRect.size.height - (labelFont?.lineHeight)!) * 0.5
 		text.drawInRect(textRect, withAttributes: attributes as [NSObject : AnyObject])
 	}
 	
@@ -332,6 +336,7 @@ class SwiftHUEColorPicker: UIView {
 		if delegate != nil {
 			delegate.valuePicked(color, type: type)
 		}
+		
 		setNeedsDisplay()
 	}
 	
