@@ -14,6 +14,8 @@ protocol SwiftHUEColorPickerDelegate {
 
 class SwiftHUEColorPicker: UIView {
 	
+	// Type
+	
 	enum PickerType: Int {
 		case Color
 		case Saturation
@@ -21,10 +23,14 @@ class SwiftHUEColorPicker: UIView {
 		case Alpha
 	}
 	
+	// Direction
+	
 	enum PickerDirection: Int {
 		case Horizontal
 		case Vertical
 	}
+	
+	// Public properties
 	
 	var delegate: SwiftHUEColorPickerDelegate!
 	var type: PickerType = .Color
@@ -58,6 +64,8 @@ class SwiftHUEColorPicker: UIView {
 		}
 	}
 	
+	// Private properties
+	
 	private var color: UIColor = UIColor.clearColor()
 	private var currentSelectionY: CGFloat = 0.0
 	private var currentSelectionX: CGFloat = 0.0
@@ -84,6 +92,8 @@ class SwiftHUEColorPicker: UIView {
 		
 		update()
 	}
+	
+	// Prerendering
 	
 	func generateHUEImage(size: CGSize) -> UIImage {
 		
@@ -141,6 +151,8 @@ class SwiftHUEColorPicker: UIView {
 		UIGraphicsEndImageContext()
 		return image
 	}
+	
+	// Updating
 	
 	func update() {
 		let offset = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
