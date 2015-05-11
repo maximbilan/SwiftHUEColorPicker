@@ -8,5 +8,6 @@ Simple iOS HUE color picker.</br>
 </br>And control has customization. You can customize the label:</br>
 ![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img3.png)
 </br>Or appearance:</br>
+</br>
 ![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img4.png)
 </br>
