@@ -27,12 +27,11 @@ You can create from storyboard or XIB. Or create manually:
 <pre>
 let picker = SwiftHUEColorPicker()
 </pre>
-For handling changing of the values:
+
+For handling changing of values you should implement protocol SwiftHUEColorPickerDelegate.
 <pre>
 picker.delegate = self
-</pre>
-And define the method:
-<pre>
+
 func valuePicked(color: UIColor, type: SwiftHUEColorPicker.PickerType) {
 }
 </pre>
