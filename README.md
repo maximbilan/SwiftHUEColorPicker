@@ -1,7 +1,7 @@
 <h4>SwiftHUEColorPicker</h4>
 
 Simple iOS HUE color picker.</br>
-<b>Manual installation:</b>
+</br><b>Manual installation:</b>
 <pre>
 Copy SwiftHUEColorPicker.swift to your project.
 </pre>
