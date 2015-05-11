@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="height" constant="100" id="u0Q-z5-enS"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8i-h9-wfV" userLabel="Vertical Color Picker" customClass="HUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8i-h9-wfV" userLabel="Vertical Color Picker" customClass="SwiftHUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
                                 <rect key="frame" x="228" y="128" width="30" height="180"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -32,7 +32,7 @@
                                     <constraint firstAttribute="width" constant="30" id="yV7-9b-3My"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kF4-RY-0J5" userLabel="Vertical Saturation Picker" customClass="HUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kF4-RY-0J5" userLabel="Vertical Saturation Picker" customClass="SwiftHUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
                                 <rect key="frame" x="266" y="128" width="30" height="180"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -40,7 +40,7 @@
                                     <constraint firstAttribute="width" constant="30" id="h8n-rY-EBW"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LqW-Re-ITD" userLabel="Vertical Brightness Picker" customClass="HUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LqW-Re-ITD" userLabel="Vertical Brightness Picker" customClass="SwiftHUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
                                 <rect key="frame" x="304" y="128" width="30" height="180"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -48,7 +48,7 @@
                                     <constraint firstAttribute="width" constant="30" id="w3I-e1-I5J"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3uq-XT-m65" userLabel="Vertical Alpha Picker" customClass="HUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3uq-XT-m65" userLabel="Vertical Alpha Picker" customClass="SwiftHUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
                                 <rect key="frame" x="342" y="129" width="30" height="180"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -56,7 +56,7 @@
                                     <constraint firstAttribute="height" constant="180" id="pci-E6-ewC"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OLw-sp-lSq" userLabel="Horizontal Color Picker" customClass="HUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OLw-sp-lSq" userLabel="Horizontal Color Picker" customClass="SwiftHUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
                                 <rect key="frame" x="210" y="333" width="180" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -64,7 +64,7 @@
                                     <constraint firstAttribute="width" constant="180" id="nDb-Nb-SeK"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eso-s1-hgX" userLabel="Horizontal Saturation Picker" customClass="HUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eso-s1-hgX" userLabel="Horizontal Saturation Picker" customClass="SwiftHUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
                                 <rect key="frame" x="210" y="371" width="180" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -72,7 +72,7 @@
                                     <constraint firstAttribute="width" constant="180" id="waW-f6-OVa"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IEI-9Z-Khn" userLabel="Horizontal Brightness Picker" customClass="HUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IEI-9Z-Khn" userLabel="Horizontal Brightness Picker" customClass="SwiftHUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
                                 <rect key="frame" x="210" y="409" width="180" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -80,7 +80,7 @@
                                     <constraint firstAttribute="height" constant="30" id="Tv0-Yu-MC2"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDS-Nj-8wh" userLabel="Horizontal Alpha Picker" customClass="HUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDS-Nj-8wh" userLabel="Horizontal Alpha Picker" customClass="SwiftHUEColorPicker" customModule="SwiftHUEColorPicker" customModuleProvider="target">
                                 <rect key="frame" x="210" y="447" width="180" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>

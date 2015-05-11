@@ -8,9 +8,9 @@
 
 import UIKit
 
-class BrushSettingsPicker: UIView, HUEColorPickerDelegate {
+class BrushSettingsPicker: UIView, SwiftHUEColorPickerDelegate {
 
-	@IBOutlet weak var colorPicker: HUEColorPicker!
+	@IBOutlet weak var colorPicker: SwiftHUEColorPicker!
 	
 //	required init(coder aDecoder: NSCoder) {
 //		super.init(coder: aDecoder)
@@ -34,7 +34,7 @@ class BrushSettingsPicker: UIView, HUEColorPickerDelegate {
 
 	// HUEColorPickerDelegate
 	
-	func valuePicked(color: UIColor, type: HUEColorPicker.PickerType) {
+	func valuePicked(color: UIColor, type: SwiftHUEColorPicker.PickerType) {
 	}
 	
 }

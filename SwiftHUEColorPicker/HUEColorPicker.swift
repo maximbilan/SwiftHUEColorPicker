@@ -1,5 +1,5 @@
 //
-//  HUEColorPicker.swift
+//  SwiftHUEColorPicker.swift
 //  SwiftHUEColorPicker
 //
 //  Created by Maxim Bilan on 5/6/15.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol HUEColorPickerDelegate {
-	func valuePicked(color: UIColor, type: HUEColorPicker.PickerType)
+protocol SwiftHUEColorPickerDelegate {
+	func valuePicked(color: UIColor, type: SwiftHUEColorPicker.PickerType)
 }
 
-class HUEColorPicker: UIView {
+class SwiftHUEColorPicker: UIView {
 	
 	enum PickerType: Int {
 		case Color
@@ -26,7 +26,7 @@ class HUEColorPicker: UIView {
 		case Vertical
 	}
 	
-	var delegate: HUEColorPickerDelegate!
+	var delegate: SwiftHUEColorPickerDelegate!
 	var type: PickerType = .Color
 	var direction: PickerDirection = .Horizontal
 	var currentColor: UIColor {
