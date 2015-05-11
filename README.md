@@ -1,7 +1,7 @@
 <h4>SwiftHUEColorPicker</h4>
 
 Simple iOS HUE color picker.</br>
-<center>![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img1.png)</center>
+![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img1.png)
 </br>Supports two modes: horizontal and vertical.</br>
 ![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img2.png)
 </br>Also you can change saturation, brightness and alpha values.
