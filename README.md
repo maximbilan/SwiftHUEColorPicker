@@ -1,6 +1,6 @@
 <h4>SwiftHUEColorPicker</h4>
 
-Simple iOS HUE color picker.<br>
+Simple iOS HUE color picker.</br>
 ![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img1.png)
-Supports two modes: horizontal and vertical.<br>
+Supports two modes: horizontal and vertical.</br>
 ![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img2.png)
