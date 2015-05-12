@@ -22,12 +22,12 @@ pod 'SwiftHUEColorPicker'
 </br>
 </br>
 <b>How to use:</b>
-</br></br>You can create from storyboard or XIB. Or create manually:
+</br></br>You can create from <i>Storyboard</i> or <i>XIB</i>. Or create manually:
 <pre>
 let picker = SwiftHUEColorPicker()
 </pre>
 
-For handling changing of values you should implement protocol SwiftHUEColorPickerDelegate.
+For handling changing of values you should implement protocol <i>SwiftHUEColorPickerDelegate</i>:
 <pre>
 picker.delegate = self
 
@@ -37,7 +37,7 @@ func valuePicked(color: UIColor, type: SwiftHUEColorPicker.PickerType) {
 
 Direction:
 <pre>
-picker.direction = SwiftHUEColorPicker.PickerDirection.Vertical // Vertical and horizontal
+picker.direction = SwiftHUEColorPicker.PickerDirection.Vertical // Vertical, Horizontal
 </pre>
 
 Type:
@@ -45,4 +45,4 @@ Type:
 picker.type = SwiftHUEColorPicker.PickerType.Color // Color, Saturation, Brightness, Alpha
 </pre>
 
-Please see example for using SwiftHUEColorPicker in this repository.
+Please see example for using <i>SwiftHUEColorPicker</i> in this repository.
