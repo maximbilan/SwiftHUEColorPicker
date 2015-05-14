@@ -65,6 +65,10 @@ class ViewController: UIViewController, SwiftHUEColorPickerDelegate {
 		// Dispose of any resources that can be recreated.
 	}
 
+	@IBAction func testButtonAction(sender: UIButton) {
+		horizontalColorPicker.currentColor = UIColor.greenColor()
+	}
+	
 	func valuePicked(color: UIColor, type: SwiftHUEColorPicker.PickerType) {
 		colorView.backgroundColor = color
 		

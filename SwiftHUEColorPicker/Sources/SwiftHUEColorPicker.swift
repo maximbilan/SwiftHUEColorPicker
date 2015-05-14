@@ -193,8 +193,8 @@ class SwiftHUEColorPicker: UIView {
 			break
 		}
 		
-		currentSelectionX = value * (self.frame.size.width - offset) + halfOffset
-		currentSelectionY = value * (self.frame.size.height - offset) + halfOffset
+		currentSelectionX = (value * size.width) + halfOffset
+		currentSelectionY = (value * size.height) + halfOffset
 		
 		hueImage = generateHUEImage(size)
 	}

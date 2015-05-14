@@ -88,12 +88,22 @@
                                     <constraint firstAttribute="width" constant="180" id="wvA-UV-fId"/>
                                 </constraints>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXu-jc-tKD">
+                                <rect key="frame" x="263" y="485" width="75" height="30"/>
+                                <state key="normal" title="test button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="testButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jqW-nC-PpC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="U8i-h9-wfV" secondAttribute="centerY" constant="82" id="074-fM-PTq"/>
                             <constraint firstAttribute="centerX" secondItem="eso-s1-hgX" secondAttribute="centerX" id="7RE-HV-fGY"/>
                             <constraint firstAttribute="centerX" secondItem="3uq-XT-m65" secondAttribute="centerX" constant="-57" id="7Wg-ym-uZ9"/>
+                            <constraint firstAttribute="centerY" secondItem="VXu-jc-tKD" secondAttribute="centerY" constant="-200" id="9w0-Ro-KNw"/>
                             <constraint firstAttribute="centerY" secondItem="eso-s1-hgX" secondAttribute="centerY" constant="-86" id="A5y-Aa-E5i"/>
                             <constraint firstAttribute="centerX" secondItem="U8i-h9-wfV" secondAttribute="centerX" constant="57" id="Bga-wn-yPX"/>
                             <constraint firstAttribute="centerY" secondItem="Wjz-WT-9Xa" secondAttribute="centerY" constant="230" id="C03-Ao-M8W"/>
@@ -101,6 +111,7 @@
                             <constraint firstAttribute="centerX" secondItem="UDS-Nj-8wh" secondAttribute="centerX" id="Lc2-QX-i8I"/>
                             <constraint firstAttribute="centerX" secondItem="OLw-sp-lSq" secondAttribute="centerX" id="Lmx-Nv-Qm7"/>
                             <constraint firstAttribute="centerY" secondItem="IEI-9Z-Khn" secondAttribute="centerY" constant="-124" id="N48-3D-zcB"/>
+                            <constraint firstAttribute="centerX" secondItem="VXu-jc-tKD" secondAttribute="centerX" constant="-0.5" id="O3g-I5-4xV"/>
                             <constraint firstAttribute="centerY" secondItem="LqW-Re-ITD" secondAttribute="centerY" constant="82" id="Rja-bI-t3k"/>
                             <constraint firstAttribute="centerX" secondItem="LqW-Re-ITD" secondAttribute="centerX" constant="-19" id="Tav-ZU-4Qd"/>
                             <constraint firstAttribute="centerX" secondItem="Wjz-WT-9Xa" secondAttribute="centerX" id="Vb8-Dm-onM"/>
