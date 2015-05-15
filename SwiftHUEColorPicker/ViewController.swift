@@ -60,14 +60,7 @@ class ViewController: UIViewController, SwiftHUEColorPickerDelegate {
 		verticalAlphaPicker.type = SwiftHUEColorPicker.PickerType.Alpha
 	}
 
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
-	}
-
-	@IBAction func testButtonAction(sender: UIButton) {
-		horizontalColorPicker.currentColor = UIColor.greenColor()
-	}
+	// SwiftHUEColorPickerDelegate
 	
 	func valuePicked(color: UIColor, type: SwiftHUEColorPicker.PickerType) {
 		colorView.backgroundColor = color
@@ -106,6 +99,12 @@ class ViewController: UIViewController, SwiftHUEColorPickerDelegate {
 			verticalBrightnessPicker.currentColor = color
 			break
 		}
+	}
+	
+	// Actions
+	
+	@IBAction func testButtonAction(sender: UIButton) {
+		horizontalColorPicker.currentColor = UIColor.greenColor()
 	}
 	
 }
