@@ -1,8 +1,8 @@
 <h4>SwiftHUEColorPicker</h4>
 
-[![Version](https://img.shields.io/cocoapods/v/Quizlet-iOS.svg?style=flat)](http://cocoadocs.org/docsets/ios_quizlet_client)
-[![License](https://img.shields.io/cocoapods/l/Quizlet-iOS.svg?style=flat)](http://cocoadocs.org/docsets/ios_quizlet_client)
-[![Platform](https://img.shields.io/cocoapods/p/Quizlet-iOS.svg?style=flat)](http://cocoadocs.org/docsets/ios_quizlet_client)
+[![Version](https://img.shields.io/cocoapods/v/SwiftHUEColorPicker.svg?style=flat)](http://cocoadocs.org/docsets/SwiftHUEColorPicker)
+[![License](https://img.shields.io/cocoapods/l/SwiftHUEColorPicker.svg?style=flat)](http://cocoadocs.org/docsets/SwiftHUEColorPicker)
+[![Platform](https://img.shields.io/cocoapods/p/SwiftHUEColorPicker.svg?style=flat)](http://cocoadocs.org/docsets/SwiftHUEColorPicker)
 
 Simple iOS HUE color picker.</br>
 ![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img1.png)
