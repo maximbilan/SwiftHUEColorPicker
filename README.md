@@ -50,3 +50,7 @@ picker.type = SwiftHUEColorPicker.PickerType.Color // Color, Saturation, Brightn
 </pre>
 
 Please see example for using <i>SwiftHUEColorPicker</i> in this repository.
+
+## License
+
+SwiftHUEColorPicker is available under the MIT license. See the LICENSE file for more info.
