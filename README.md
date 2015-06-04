@@ -6,9 +6,8 @@
 
 Simple iOS HUE color picker.</br>
 ![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img1.png)
-
 ## Installation
-</br><b>Manual:</b>
+<b>Manual:</b>
 <pre>
 Copy SwiftHUEColorPicker.swift to your project.
 </pre>
@@ -25,8 +24,6 @@ pod 'SwiftHUEColorPicker'
 </br>Or appearance:</br>
 </br>
 ![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img4.png)
-</br>
-</br>
 ## How to use:
 </br></br>You can create from <i>Storyboard</i> or <i>XIB</i>. Or create manually:
 <pre>
