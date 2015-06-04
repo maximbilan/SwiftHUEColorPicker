@@ -16,7 +16,8 @@ Copy SwiftHUEColorPicker.swift to your project.
 <pre>
 pod 'SwiftHUEColorPicker'
 </pre>
-</br>Supports two modes: horizontal and vertical.</br>
+## Description
+Supports two modes: horizontal and vertical.</br>
 ![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img2.png)
 </br>Also you can change saturation, brightness and alpha values.
 </br>And control has customization. You can customize the label:</br>
