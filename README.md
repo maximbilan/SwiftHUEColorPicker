@@ -25,7 +25,7 @@ pod 'SwiftHUEColorPicker'
 </br>
 ![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img4.png)
 ## How to use:
-</br></br>You can create from <i>Storyboard</i> or <i>XIB</i>. Or create manually:
+You can create from <i>Storyboard</i> or <i>XIB</i>. Or create manually:
 <pre>
 let picker = SwiftHUEColorPicker()
 </pre>
