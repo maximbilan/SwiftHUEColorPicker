@@ -1,4 +1,4 @@
-<h4>SwiftHUEColorPicker</h4>
+## SwiftHUEColorPicker
 
 [![Version](https://img.shields.io/cocoapods/v/SwiftHUEColorPicker.svg?style=flat)](http://cocoadocs.org/docsets/SwiftHUEColorPicker)
 [![License](https://img.shields.io/cocoapods/l/SwiftHUEColorPicker.svg?style=flat)](http://cocoadocs.org/docsets/SwiftHUEColorPicker)
@@ -6,7 +6,9 @@
 
 Simple iOS HUE color picker.</br>
 ![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img1.png)
-</br><b>Manual installation:</b>
+
+## Installation
+</br><b>Manual:</b>
 <pre>
 Copy SwiftHUEColorPicker.swift to your project.
 </pre>
@@ -25,7 +27,7 @@ pod 'SwiftHUEColorPicker'
 ![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img4.png)
 </br>
 </br>
-<b>How to use:</b>
+## How to use:
 </br></br>You can create from <i>Storyboard</i> or <i>XIB</i>. Or create manually:
 <pre>
 let picker = SwiftHUEColorPicker()
