@@ -12,13 +12,15 @@ class ViewController: UIViewController, SwiftHUEColorPickerDelegate {
 
 	@IBOutlet weak var colorView: UIView!
 	
-	// Horizontal pickers
+	// MARK: - Horizontal pickers
+	
 	@IBOutlet weak var horizontalColorPicker: SwiftHUEColorPicker!
 	@IBOutlet weak var horizontalSaturationPicker: SwiftHUEColorPicker!
 	@IBOutlet weak var horizontalBrightnessPicker: SwiftHUEColorPicker!
 	@IBOutlet weak var horizontalAlphaPicker: SwiftHUEColorPicker!
 	
-	// Vertical pickers
+	// MARK: - Vertical pickers
+	
 	@IBOutlet weak var verticalColorPicker: SwiftHUEColorPicker!
 	@IBOutlet weak var verticalSaturationPicker: SwiftHUEColorPicker!
 	@IBOutlet weak var verticalBrightnessPicker: SwiftHUEColorPicker!
@@ -60,7 +62,7 @@ class ViewController: UIViewController, SwiftHUEColorPickerDelegate {
 		verticalAlphaPicker.type = SwiftHUEColorPicker.PickerType.Alpha
 	}
 
-	// SwiftHUEColorPickerDelegate
+	// MARK: - SwiftHUEColorPickerDelegate
 	
 	func valuePicked(color: UIColor, type: SwiftHUEColorPicker.PickerType) {
 		colorView.backgroundColor = color
@@ -101,7 +103,7 @@ class ViewController: UIViewController, SwiftHUEColorPickerDelegate {
 		}
 	}
 	
-	// Actions
+	// MARK: - Actions
 	
 	@IBAction func testButtonAction(sender: UIButton) {
 		horizontalColorPicker.currentColor = UIColor.greenColor()

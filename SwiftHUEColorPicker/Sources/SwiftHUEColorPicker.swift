@@ -14,7 +14,7 @@ protocol SwiftHUEColorPickerDelegate {
 
 class SwiftHUEColorPicker: UIView {
 	
-	// Type
+	// MARK: - Type
 	
 	enum PickerType: Int {
 		case Color
@@ -23,19 +23,19 @@ class SwiftHUEColorPicker: UIView {
 		case Alpha
 	}
 	
-	// Direction
+	// MARK: - Direction
 	
 	enum PickerDirection: Int {
 		case Horizontal
 		case Vertical
 	}
 	
-	// Constants
+	// MARK: - Constants
 	
 	let HUEMaxValue: CGFloat = 360
 	let PercentMaxValue: CGFloat = 100
 	
-	// Main public properties
+	// MARK: - Main public properties
 	
 	var delegate: SwiftHUEColorPickerDelegate!
 	var type: PickerType = .Color
@@ -69,14 +69,14 @@ class SwiftHUEColorPicker: UIView {
 		}
 	}
 	
-	// Additional public properties
+	// MARK: - Additional public properties
 	
 	var labelFontColor: UIColor = UIColor.whiteColor()
 	var labelBackgroundColor: UIColor = UIColor.blackColor()
 	var labelFont = UIFont(name: "Helvetica Neue", size: 12)
 	var cornerRadius: CGFloat = 10.0
 	
-	// Private properties
+	// MARK: - Private properties
 	
 	private var color: UIColor = UIColor.clearColor()
 	private var currentSelectionY: CGFloat = 0.0
@@ -87,7 +87,7 @@ class SwiftHUEColorPicker: UIView {
 	private var brightnessValue: CGFloat = 1.0
 	private var alphaValue: CGFloat = 1.0
 	
-	// Initialization
+	// MARK: - Initialization
 	
 	required init(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
@@ -105,7 +105,7 @@ class SwiftHUEColorPicker: UIView {
 		update()
 	}
 	
-	// Prerendering
+	// MARK: - Prerendering
 	
 	func generateHUEImage(size: CGSize) -> UIImage {
 		
@@ -164,7 +164,7 @@ class SwiftHUEColorPicker: UIView {
 		return image
 	}
 	
-	// Updating
+	// MARK: - Updating
 	
 	func update() {
 		let offset = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
@@ -199,7 +199,7 @@ class SwiftHUEColorPicker: UIView {
 		hueImage = generateHUEImage(size)
 	}
 	
-	// Drawing
+	// MARK: - Drawing
 	
 	override func drawRect(rect: CGRect) {
 		super.drawRect(rect)
@@ -274,7 +274,7 @@ class SwiftHUEColorPicker: UIView {
 		text.drawInRect(textRect, withAttributes: attributes as [NSObject : AnyObject])
 	}
 	
-	// Touch events
+	// MARK: - Touch events
 	
 	override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
 		let touch: AnyObject? = touches.first
@@ -298,7 +298,7 @@ class SwiftHUEColorPicker: UIView {
 		
 	}
 
-	// Touch handling
+	// MARK: - Touch handling
 	
 	func handleTouch(touchPoint: CGPoint) {
 		currentSelectionX = touchPoint.x
