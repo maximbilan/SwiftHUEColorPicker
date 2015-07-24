@@ -8,15 +8,15 @@
 
 import UIKit
 
-protocol SwiftHUEColorPickerDelegate {
+public protocol SwiftHUEColorPickerDelegate {
 	func valuePicked(color: UIColor, type: SwiftHUEColorPicker.PickerType)
 }
 
-class SwiftHUEColorPicker: UIView {
+public class SwiftHUEColorPicker: UIView {
 	
 	// MARK: - Type
 	
-	enum PickerType: Int {
+	public enum PickerType: Int {
 		case Color
 		case Saturation
 		case Brightness
@@ -25,7 +25,7 @@ class SwiftHUEColorPicker: UIView {
 	
 	// MARK: - Direction
 	
-	enum PickerDirection: Int {
+	public enum PickerDirection: Int {
 		case Horizontal
 		case Vertical
 	}
@@ -37,10 +37,10 @@ class SwiftHUEColorPicker: UIView {
 	
 	// MARK: - Main public properties
 	
-	var delegate: SwiftHUEColorPickerDelegate!
-	var type: PickerType = .Color
-	var direction: PickerDirection = .Horizontal
-	var currentColor: UIColor {
+	public var delegate: SwiftHUEColorPickerDelegate!
+	public var type: PickerType = .Color
+	public var direction: PickerDirection = .Horizontal
+	public var currentColor: UIColor {
 		get {
 			return color
 		}
@@ -71,10 +71,10 @@ class SwiftHUEColorPicker: UIView {
 	
 	// MARK: - Additional public properties
 	
-	var labelFontColor: UIColor = UIColor.whiteColor()
-	var labelBackgroundColor: UIColor = UIColor.blackColor()
-	var labelFont = UIFont(name: "Helvetica Neue", size: 12)
-	var cornerRadius: CGFloat = 10.0
+	public var labelFontColor: UIColor = UIColor.whiteColor()
+	public var labelBackgroundColor: UIColor = UIColor.blackColor()
+	public var labelFont = UIFont(name: "Helvetica Neue", size: 12)
+	public var cornerRadius: CGFloat = 10.0
 	
 	// MARK: - Private properties
 	
@@ -89,17 +89,17 @@ class SwiftHUEColorPicker: UIView {
 	
 	// MARK: - Initialization
 	
-	required init(coder aDecoder: NSCoder) {
+	required public init(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 		self.backgroundColor = UIColor.clearColor()
 	}
 	
-	override init(frame: CGRect) {
+	override public init(frame: CGRect) {
 		super.init(frame: frame)
 		self.backgroundColor = UIColor.clearColor()
 	}
 	
-	override func layoutSubviews() {
+	override public func layoutSubviews() {
 		super.layoutSubviews()
 		
 		update()
@@ -201,7 +201,7 @@ class SwiftHUEColorPicker: UIView {
 	
 	// MARK: - Drawing
 	
-	override func drawRect(rect: CGRect) {
+	override public func drawRect(rect: CGRect) {
 		super.drawRect(rect)
 		
 		let radius = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
@@ -276,25 +276,25 @@ class SwiftHUEColorPicker: UIView {
 	
 	// MARK: - Touch events
 	
-	override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+	override public func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
 		let touch: AnyObject? = touches.first
 		let point = touch!.locationInView(self)
 		handleTouch(point)
 	}
 	
-	override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+	override public func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
 		let touch: AnyObject? = touches.first
 		let point = touch!.locationInView(self)
 		handleTouch(point)
 	}
 	
-	override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+	override public func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
 		let touch: AnyObject? = touches.first
 		let point = touch!.locationInView(self)
 		handleTouch(point)
 	}
 	
-	override func touchesCancelled(touches: Set<NSObject>!, withEvent event: UIEvent!) {
+	override public func touchesCancelled(touches: Set<NSObject>!, withEvent event: UIEvent!) {
 		
 	}
 
