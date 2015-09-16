@@ -89,7 +89,7 @@ public class SwiftHUEColorPicker: UIView {
 	
 	// MARK: - Initialization
 	
-	required public init(coder aDecoder: NSCoder) {
+	required public init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 		self.backgroundColor = UIColor.clearColor()
 	}
@@ -109,7 +109,7 @@ public class SwiftHUEColorPicker: UIView {
 	
 	func generateHUEImage(size: CGSize) -> UIImage {
 		
-		var rect = CGRectMake(0, 0, size.width, size.height)
+		let rect = CGRectMake(0, 0, size.width, size.height)
 		UIGraphicsBeginImageContextWithOptions(size, false, 0)
 		
 		UIBezierPath(roundedRect: rect, cornerRadius: cornerRadius).addClip()
@@ -159,7 +159,7 @@ public class SwiftHUEColorPicker: UIView {
 			}
 		}
 		
-		var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+		let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
 		UIGraphicsEndImageContext()
 		return image
 	}
@@ -244,10 +244,10 @@ public class SwiftHUEColorPicker: UIView {
 		CGContextFillPath(context);
 		CGContextStrokePath(context);
 		
-		var textParagraphStyle = NSMutableParagraphStyle()
+		let textParagraphStyle = NSMutableParagraphStyle()
 		textParagraphStyle.alignment = .Center
 		
-		var attributes: NSDictionary = [NSForegroundColorAttributeName: labelFontColor,
+		let attributes: NSDictionary = [NSForegroundColorAttributeName: labelFontColor,
 										NSParagraphStyleAttributeName: textParagraphStyle,
 										NSFontAttributeName: labelFont!]
 		
@@ -271,30 +271,30 @@ public class SwiftHUEColorPicker: UIView {
 		let text: NSString = "\(textValue)"
 		var textRect = circleRect
 		textRect.origin.y += (textRect.size.height - (labelFont?.lineHeight)!) * 0.5
-		text.drawInRect(textRect, withAttributes: attributes as [NSObject : AnyObject])
+		text.drawInRect(textRect, withAttributes: attributes as? [String : AnyObject])
 	}
 	
 	// MARK: - Touch events
 	
-	override public func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+	override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
 		let touch: AnyObject? = touches.first
 		let point = touch!.locationInView(self)
 		handleTouch(point)
 	}
 	
-	override public func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+	override public func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
 		let touch: AnyObject? = touches.first
 		let point = touch!.locationInView(self)
 		handleTouch(point)
 	}
 	
-	override public func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+	override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
 		let touch: AnyObject? = touches.first
 		let point = touch!.locationInView(self)
 		handleTouch(point)
 	}
 	
-	override public func touchesCancelled(touches: Set<NSObject>!, withEvent event: UIEvent!) {
+	override public func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
 		
 	}
 
