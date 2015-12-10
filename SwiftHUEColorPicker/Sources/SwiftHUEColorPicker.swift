@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol SwiftHUEColorPickerDelegate {
+public protocol SwiftHUEColorPickerDelegate : class {
 	func valuePicked(color: UIColor, type: SwiftHUEColorPicker.PickerType)
 }
 
@@ -37,7 +37,7 @@ public class SwiftHUEColorPicker: UIView {
 	
 	// MARK: - Main public properties
 	
-	public var delegate: SwiftHUEColorPickerDelegate!
+	public weak var delegate: SwiftHUEColorPickerDelegate!
 	public var type: PickerType = .Color
 	public var direction: PickerDirection = .Horizontal
 	public var currentColor: UIColor {
