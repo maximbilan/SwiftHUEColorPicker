@@ -115,7 +115,7 @@ public class SwiftHUEColorPicker: UIView {
 		UIBezierPath(roundedRect: rect, cornerRadius: cornerRadius).addClip()
 		
 		if direction == .Horizontal {
-			for var x: Int = 0; x < Int(size.width); ++x {
+			for x: Int in 0 ..< Int(size.width) {
 				
 				switch type {
 				case .Color:
@@ -137,7 +137,7 @@ public class SwiftHUEColorPicker: UIView {
 			}
 		}
 		else {
-			for var y: Int = 0; y < Int(size.height); ++y {
+			for y: Int in 0 ..< Int(size.height) {
 				
 				switch type {
 				case .Color:
