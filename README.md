@@ -13,7 +13,7 @@ pod 'SwiftHUEColorPicker'
 </pre>
 <b>Manual:</b>
 <pre>
-Copy SwiftHUEColorPicker.swift to your project.
+Copy <i>SwiftHUEColorPicker.swift</i> to your project.
 </pre>
 ## Description
 Supports two modes: horizontal and vertical.</br>
