@@ -24,7 +24,7 @@ Supports two modes: <i>horizontal</i> and <i>vertical</i>.</br>
 </br>Or appearance:</br>
 </br>
 ![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img4.png)
-## How to use
+## Using
 You can create from <i>Storyboard</i> or <i>XIB</i>. Or create manually:
 <pre>
 let picker = SwiftHUEColorPicker()
