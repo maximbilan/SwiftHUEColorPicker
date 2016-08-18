@@ -106,7 +106,7 @@ class ViewController: UIViewController, SwiftHUEColorPickerDelegate {
 	// MARK: - Actions
 	
 	@IBAction func testButtonAction(sender: UIButton) {
-		horizontalColorPicker.currentColor = UIColor.greenColor()
+		horizontalColorPicker.currentColor = UIColor.green
 	}
 	
 }

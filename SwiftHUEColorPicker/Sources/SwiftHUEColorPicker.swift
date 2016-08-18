@@ -71,14 +71,14 @@ public class SwiftHUEColorPicker: UIView {
 	
 	// MARK: - Additional public properties
 	
-	public var labelFontColor: UIColor = UIColor.whiteColor()
-	public var labelBackgroundColor: UIColor = UIColor.blackColor()
+	public var labelFontColor: UIColor = UIColor.white
+	public var labelBackgroundColor: UIColor = UIColor.black
 	public var labelFont = UIFont(name: "Helvetica Neue", size: 12)
 	public var cornerRadius: CGFloat = 10.0
 	
 	// MARK: - Private properties
 	
-	private var color: UIColor = UIColor.clearColor()
+	private var color: UIColor = UIColor.clear
 	private var currentSelectionY: CGFloat = 0.0
 	private var currentSelectionX: CGFloat = 0.0
 	private var hueImage: UIImage!
@@ -91,12 +91,12 @@ public class SwiftHUEColorPicker: UIView {
 	
 	required public init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
-		self.backgroundColor = UIColor.clearColor()
+		self.backgroundColor = UIColor.clear
 	}
 	
 	override public init(frame: CGRect) {
 		super.init(frame: frame)
-		self.backgroundColor = UIColor.clearColor()
+		self.backgroundColor = UIColor.clear
 	}
 	
 	override public func layoutSubviews() {
@@ -108,8 +108,8 @@ public class SwiftHUEColorPicker: UIView {
 	// MARK: - Prerendering
 	
 	func generateHUEImage(size: CGSize) -> UIImage {
-		
-		let rect = CGRectMake(0, 0, size.width, size.height)
+
+		let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
 		UIGraphicsBeginImageContextWithOptions(size, false, 0)
 		
 		UIBezierPath(roundedRect: rect, cornerRadius: cornerRadius).addClip()
@@ -132,7 +132,7 @@ public class SwiftHUEColorPicker: UIView {
 					break
 				}
 				
-				let temp = CGRectMake(CGFloat(x), 0, 1, size.height)
+				let temp = CGRect(x: CGFloat(x), y: 0, width: 1, height: size.height)
 				UIRectFill(temp)
 			}
 		}
@@ -154,12 +154,12 @@ public class SwiftHUEColorPicker: UIView {
 					break
 				}
 				
-				let temp = CGRectMake(0, CGFloat(y), size.width, 1)
+				let temp = CGRect(x: 0, y: CGFloat(y), width: size.width, height: 1)
 				UIRectFill(temp)
 			}
 		}
 		
-		let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+		let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
 		UIGraphicsEndImageContext()
 		return image
 	}
@@ -196,13 +196,13 @@ public class SwiftHUEColorPicker: UIView {
 		currentSelectionX = (value * size.width) + halfOffset
 		currentSelectionY = (value * size.height) + halfOffset
 		
-		hueImage = generateHUEImage(size)
+		hueImage = generateHUEImage(size: size)
 	}
 	
 	// MARK: - Drawing
 	
-	override public func drawRect(rect: CGRect) {
-		super.drawRect(rect)
+	override public func draw(_ rect: CGRect) {
+		super.draw(rect)
 		
 		let radius = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
 		let halfRadius = radius * 0.5
@@ -221,7 +221,7 @@ public class SwiftHUEColorPicker: UIView {
 			circleY = 0
 		}
 		
-		let circleRect = (direction == .Horizontal ? CGRectMake(circleX, 0, radius, radius) : CGRectMake(0, circleY, radius, radius))
+		let circleRect = (direction == .Horizontal ? CGRect(x: circleX, y: 0, width: radius, height: radius) : CGRect(x: 0, y: circleY, width: radius, height: radius))
 		let circleColor = labelBackgroundColor
 		var hueRect = rect
 		
@@ -234,18 +234,18 @@ public class SwiftHUEColorPicker: UIView {
 				hueRect.size.height -= radius
 				hueRect.origin.y += halfRadius
 			}
-			hueImage.drawInRect(hueRect)
+			hueImage.draw(in: hueRect)
 		}
 		
 		let context = UIGraphicsGetCurrentContext();
 		circleColor.set()
-		CGContextAddEllipseInRect(context, circleRect);
-		CGContextSetFillColor(context, CGColorGetComponents(circleColor.CGColor));
-		CGContextFillPath(context);
-		CGContextStrokePath(context);
+		context!.addEllipse(inRect: circleRect);
+		context!.setFillColor(circleColor.cgColor)
+		context!.fillPath();
+		context!.strokePath();
 		
 		let textParagraphStyle = NSMutableParagraphStyle()
-		textParagraphStyle.alignment = .Center
+		textParagraphStyle.alignment = .center
 		
 		let attributes: NSDictionary = [NSForegroundColorAttributeName: labelFontColor,
 										NSParagraphStyleAttributeName: textParagraphStyle,
@@ -271,33 +271,35 @@ public class SwiftHUEColorPicker: UIView {
 		let text: NSString = "\(textValue)"
 		var textRect = circleRect
 		textRect.origin.y += (textRect.size.height - (labelFont?.lineHeight)!) * 0.5
-		text.drawInRect(textRect, withAttributes: attributes as? [String : AnyObject])
+		text.draw(in: textRect, withAttributes: attributes as? [String : AnyObject])
 	}
 	
 	// MARK: - Touch events
 	
-	override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+	public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		let touch: AnyObject? = touches.first
-		let point = touch!.locationInView(self)
-		handleTouch(point)
+		if let point = touch?.location(in: self) {
+			handleTouch(touchPoint: point)
+		}
 	}
 	
-	override public func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+	public override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
 		let touch: AnyObject? = touches.first
-		let point = touch!.locationInView(self)
-		handleTouch(point)
+		if let point = touch?.location(in: self) {
+			handleTouch(touchPoint: point)
+		}
 	}
 	
-	override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+	public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
 		let touch: AnyObject? = touches.first
-		let point = touch!.locationInView(self)
-		handleTouch(point)
+		if let point = touch?.location(in: self) {
+			handleTouch(touchPoint: point)
+		}
 	}
 	
-	override public func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
-		
+	public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
 	}
-
+	
 	// MARK: - Touch handling
 	
 	func handleTouch(touchPoint: CGPoint) {
@@ -340,7 +342,7 @@ public class SwiftHUEColorPicker: UIView {
 		color = UIColor(hue: hueValue, saturation: saturationValue, brightness: brightnessValue, alpha: alphaValue)
 		
 		if delegate != nil {
-			delegate.valuePicked(color, type: type)
+			delegate.valuePicked(color: color, type: type)
 		}
 		
 		setNeedsDisplay()
