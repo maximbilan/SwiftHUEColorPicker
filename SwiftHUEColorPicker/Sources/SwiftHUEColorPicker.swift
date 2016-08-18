@@ -237,12 +237,12 @@ public class SwiftHUEColorPicker: UIView {
 			hueImage.draw(in: hueRect)
 		}
 		
-		let context = UIGraphicsGetCurrentContext();
+		let context = UIGraphicsGetCurrentContext()
 		circleColor.set()
-		context!.addEllipse(inRect: circleRect);
+		context!.addEllipse(inRect: circleRect)
 		context!.setFillColor(circleColor.cgColor)
-		context!.fillPath();
-		context!.strokePath();
+		context!.fillPath()
+		context!.strokePath()
 		
 		let textParagraphStyle = NSMutableParagraphStyle()
 		textParagraphStyle.alignment = .center
@@ -251,7 +251,7 @@ public class SwiftHUEColorPicker: UIView {
 										NSParagraphStyleAttributeName: textParagraphStyle,
 										NSFontAttributeName: labelFont!]
 		
-		var value: CGFloat = 0;
+		var value: CGFloat = 0
 		switch type {
 		case .Color:
 			value = hueValue
