@@ -15,6 +15,9 @@ pod 'SwiftHUEColorPicker'
 <pre>
 Copy <i>SwiftHUEColorPicker.swift</i> to your project.
 </pre>
+
+For running in Xcode 8 Beta please use <b>swift-3.0</b> branch.
+
 ## Description
 Supports two modes: <i>horizontal</i> and <i>vertical</i>.</br>
 ![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img2.png)
