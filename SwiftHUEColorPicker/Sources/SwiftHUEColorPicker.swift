@@ -9,25 +9,25 @@
 import UIKit
 
 public protocol SwiftHUEColorPickerDelegate : class {
-	func valuePicked(color: UIColor, type: SwiftHUEColorPicker.PickerType)
+	func valuePicked(_ color: UIColor, type: SwiftHUEColorPicker.PickerType)
 }
 
-public class SwiftHUEColorPicker: UIView {
+open class SwiftHUEColorPicker: UIView {
 	
 	// MARK: - Type
 	
 	public enum PickerType: Int {
-		case Color
-		case Saturation
-		case Brightness
-		case Alpha
+		case color
+		case saturation
+		case brightness
+		case alpha
 	}
 	
 	// MARK: - Direction
 	
 	public enum PickerDirection: Int {
-		case Horizontal
-		case Vertical
+		case horizontal
+		case vertical
 	}
 	
 	// MARK: - Constants
@@ -37,10 +37,10 @@ public class SwiftHUEColorPicker: UIView {
 	
 	// MARK: - Main public properties
 	
-	public weak var delegate: SwiftHUEColorPickerDelegate!
-	public var type: PickerType = .Color
-	public var direction: PickerDirection = .Horizontal
-	public var currentColor: UIColor {
+	open weak var delegate: SwiftHUEColorPickerDelegate!
+	open var type: PickerType = .color
+	open var direction: PickerDirection = .horizontal
+	open var currentColor: UIColor {
 		get {
 			return color
 		}
@@ -71,21 +71,21 @@ public class SwiftHUEColorPicker: UIView {
 	
 	// MARK: - Additional public properties
 	
-	public var labelFontColor: UIColor = UIColor.white
-	public var labelBackgroundColor: UIColor = UIColor.black
-	public var labelFont = UIFont(name: "Helvetica Neue", size: 12)
-	public var cornerRadius: CGFloat = 10.0
+	open var labelFontColor: UIColor = UIColor.white
+	open var labelBackgroundColor: UIColor = UIColor.black
+	open var labelFont = UIFont(name: "Helvetica Neue", size: 12)
+	open var cornerRadius: CGFloat = 10.0
 	
 	// MARK: - Private properties
 	
-	private var color: UIColor = UIColor.clear
-	private var currentSelectionY: CGFloat = 0.0
-	private var currentSelectionX: CGFloat = 0.0
-	private var hueImage: UIImage!
-	private var hueValue: CGFloat = 0.0
-	private var saturationValue: CGFloat = 1.0
-	private var brightnessValue: CGFloat = 1.0
-	private var alphaValue: CGFloat = 1.0
+	fileprivate var color: UIColor = UIColor.clear
+	fileprivate var currentSelectionY: CGFloat = 0.0
+	fileprivate var currentSelectionX: CGFloat = 0.0
+	fileprivate var hueImage: UIImage!
+	fileprivate var hueValue: CGFloat = 0.0
+	fileprivate var saturationValue: CGFloat = 1.0
+	fileprivate var brightnessValue: CGFloat = 1.0
+	fileprivate var alphaValue: CGFloat = 1.0
 	
 	// MARK: - Initialization
 	
@@ -99,7 +99,7 @@ public class SwiftHUEColorPicker: UIView {
 		self.backgroundColor = UIColor.clear
 	}
 	
-	override public func layoutSubviews() {
+	override open func layoutSubviews() {
 		super.layoutSubviews()
 		
 		update()
@@ -107,27 +107,27 @@ public class SwiftHUEColorPicker: UIView {
 	
 	// MARK: - Prerendering
 	
-	func generateHUEImage(size: CGSize) -> UIImage {
+	func generateHUEImage(_ size: CGSize) -> UIImage {
 
 		let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
 		UIGraphicsBeginImageContextWithOptions(size, false, 0)
 		
 		UIBezierPath(roundedRect: rect, cornerRadius: cornerRadius).addClip()
 		
-		if direction == .Horizontal {
+		if direction == .horizontal {
 			for x: Int in 0 ..< Int(size.width) {
 				
 				switch type {
-				case .Color:
+				case .color:
 					UIColor(hue: CGFloat(CGFloat(x) / size.width), saturation: 1.0, brightness: 1.0, alpha: 1.0).set()
 					break
-				case .Saturation:
+				case .saturation:
 					UIColor(hue: hueValue, saturation: CGFloat(CGFloat(x) / size.width), brightness: 1.0, alpha: 1.0).set()
 					break
-				case .Brightness:
+				case .brightness:
 					UIColor(hue: hueValue, saturation: 1.0, brightness: CGFloat(CGFloat(x) / size.width), alpha: 1.0).set()
 					break
-				case .Alpha:
+				case .alpha:
 					UIColor(hue: hueValue, saturation: 1.0, brightness: 1.0, alpha: CGFloat(CGFloat(x) / size.width)).set()
 					break
 				}
@@ -140,16 +140,16 @@ public class SwiftHUEColorPicker: UIView {
 			for y: Int in 0 ..< Int(size.height) {
 				
 				switch type {
-				case .Color:
+				case .color:
 					UIColor(hue: CGFloat(CGFloat(y) / size.height), saturation: 1.0, brightness: 1.0, alpha: 1.0).set()
 					break
-				case .Saturation:
+				case .saturation:
 					UIColor(hue: hueValue, saturation: CGFloat(CGFloat(y) / size.height), brightness: 1.0, alpha: 1.0).set()
 					break
-				case .Brightness:
+				case .brightness:
 					UIColor(hue: hueValue, saturation: 1.0, brightness: CGFloat(CGFloat(y) / size.height), alpha: 1.0).set()
 					break
-				case .Alpha:
+				case .alpha:
 					UIColor(hue: hueValue, saturation: 1.0, brightness: 1.0, alpha: CGFloat(CGFloat(y) / size.height)).set()
 					break
 				}
@@ -167,10 +167,10 @@ public class SwiftHUEColorPicker: UIView {
 	// MARK: - Updating
 	
 	func update() {
-		let offset = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
+		let offset = (direction == .horizontal ? self.frame.size.height : self.frame.size.width)
 		let halfOffset = offset * 0.5
 		var size = self.frame.size
-		if direction == .Horizontal {
+		if direction == .horizontal {
 			size.width -= offset
 		}
 		else {
@@ -179,16 +179,16 @@ public class SwiftHUEColorPicker: UIView {
 		
 		var value: CGFloat = 0
 		switch type {
-		case .Color:
+		case .color:
 			value = hueValue
 			break
-		case .Saturation:
+		case .saturation:
 			value = saturationValue
 			break
-		case .Brightness:
+		case .brightness:
 			value = brightnessValue
 			break
-		case .Alpha:
+		case .alpha:
 			value = alphaValue
 			break
 		}
@@ -196,15 +196,15 @@ public class SwiftHUEColorPicker: UIView {
 		currentSelectionX = (value * size.width) + halfOffset
 		currentSelectionY = (value * size.height) + halfOffset
 		
-		hueImage = generateHUEImage(size: size)
+		hueImage = generateHUEImage(size)
 	}
 	
 	// MARK: - Drawing
 	
-	override public func draw(_ rect: CGRect) {
+	override open func draw(_ rect: CGRect) {
 		super.draw(rect)
 		
-		let radius = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
+		let radius = (direction == .horizontal ? self.frame.size.height : self.frame.size.width)
 		let halfRadius = radius * 0.5
 		var circleX = currentSelectionX - halfRadius
 		var circleY = currentSelectionY - halfRadius
@@ -221,12 +221,12 @@ public class SwiftHUEColorPicker: UIView {
 			circleY = 0
 		}
 		
-		let circleRect = (direction == .Horizontal ? CGRect(x: circleX, y: 0, width: radius, height: radius) : CGRect(x: 0, y: circleY, width: radius, height: radius))
+		let circleRect = (direction == .horizontal ? CGRect(x: circleX, y: 0, width: radius, height: radius) : CGRect(x: 0, y: circleY, width: radius, height: radius))
 		let circleColor = labelBackgroundColor
 		var hueRect = rect
 		
 		if hueImage != nil {
-			if direction == .Horizontal {
+			if direction == .horizontal {
 				hueRect.size.width -= radius
 				hueRect.origin.x += halfRadius
 			}
@@ -253,21 +253,21 @@ public class SwiftHUEColorPicker: UIView {
 		
 		var value: CGFloat = 0
 		switch type {
-		case .Color:
+		case .color:
 			value = hueValue
 			break
-		case .Saturation:
+		case .saturation:
 			value = saturationValue
 			break
-		case .Brightness:
+		case .brightness:
 			value = brightnessValue
 			break
-		case .Alpha:
+		case .alpha:
 			value = alphaValue
 			break
 		}
 		
-		let textValue = Int(value * (type == .Color ? HUEMaxValue : PercentMaxValue))
+		let textValue = Int(value * (type == .color ? HUEMaxValue : PercentMaxValue))
 		let text = String(textValue) as NSString
 		var textRect = circleRect
 		textRect.origin.y += (textRect.size.height - (labelFont?.lineHeight)!) * 0.5
@@ -276,37 +276,37 @@ public class SwiftHUEColorPicker: UIView {
 	
 	// MARK: - Touch events
 	
-	public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+	open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		let touch: AnyObject? = touches.first
 		if let point = touch?.location(in: self) {
-			handleTouch(touchPoint: point)
+			handleTouch(point)
 		}
 	}
 	
-	public override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+	open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
 		let touch: AnyObject? = touches.first
 		if let point = touch?.location(in: self) {
-			handleTouch(touchPoint: point)
+			handleTouch(point)
 		}
 	}
 	
-	public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+	open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
 		let touch: AnyObject? = touches.first
 		if let point = touch?.location(in: self) {
-			handleTouch(touchPoint: point)
+			handleTouch(point)
 		}
 	}
 	
-	public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+	open override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
 	}
 	
 	// MARK: - Touch handling
 	
-	func handleTouch(touchPoint: CGPoint) {
+	func handleTouch(_ touchPoint: CGPoint) {
 		currentSelectionX = touchPoint.x
 		currentSelectionY = touchPoint.y
 		
-		let offset = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
+		let offset = (direction == .horizontal ? self.frame.size.height : self.frame.size.width)
 		let halfOffset = offset * 0.5
 		if currentSelectionX < halfOffset {
 			currentSelectionX = halfOffset
@@ -321,20 +321,20 @@ public class SwiftHUEColorPicker: UIView {
 			currentSelectionY = self.frame.size.height - halfOffset
 		}
 		
-		let value = (direction == .Horizontal ? CGFloat((currentSelectionX - halfOffset) / (self.frame.size.width - offset))
+		let value = (direction == .horizontal ? CGFloat((currentSelectionX - halfOffset) / (self.frame.size.width - offset))
 											  : CGFloat((currentSelectionY - halfOffset) / (self.frame.size.height - offset)))
 		
 		switch type {
-		case .Color:
+		case .color:
 			hueValue = value
 			break
-		case .Saturation:
+		case .saturation:
 			saturationValue = value
 			break
-		case .Brightness:
+		case .brightness:
 			brightnessValue = value
 			break
-		case .Alpha:
+		case .alpha:
 			alphaValue = value
 			break
 		}
@@ -342,7 +342,7 @@ public class SwiftHUEColorPicker: UIView {
 		color = UIColor(hue: hueValue, saturation: saturationValue, brightness: brightnessValue, alpha: alphaValue)
 		
 		if delegate != nil {
-			delegate.valuePicked(color: color, type: type)
+			delegate.valuePicked(color, type: type)
 		}
 		
 		setNeedsDisplay()
