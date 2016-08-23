@@ -239,7 +239,7 @@ public class SwiftHUEColorPicker: UIView {
 		
 		let context = UIGraphicsGetCurrentContext()
 		circleColor.set()
-		context!.addEllipse(inRect: circleRect)
+		context!.addEllipse(in: circleRect)
 		context!.setFillColor(circleColor.cgColor)
 		context!.fillPath()
 		context!.strokePath()
@@ -267,8 +267,8 @@ public class SwiftHUEColorPicker: UIView {
 			break
 		}
 		
-		let textValue: Int = Int(value * (type == .Color ? HUEMaxValue : PercentMaxValue))
-		let text: NSString = "\(textValue)"
+		let textValue = Int(value * (type == .Color ? HUEMaxValue : PercentMaxValue))
+		let text = String(textValue) as NSString
 		var textRect = circleRect
 		textRect.origin.y += (textRect.size.height - (labelFont?.lineHeight)!) * 0.5
 		text.draw(in: textRect, withAttributes: attributes as? [String : AnyObject])
