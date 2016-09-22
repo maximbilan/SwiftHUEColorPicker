@@ -30,45 +30,45 @@ class ViewController: UIViewController, SwiftHUEColorPickerDelegate {
 		super.viewDidLoad()
 		
 		horizontalColorPicker.delegate = self
-		horizontalColorPicker.direction = SwiftHUEColorPicker.PickerDirection.Horizontal
-		horizontalSaturationPicker.type = SwiftHUEColorPicker.PickerType.Color
+		horizontalColorPicker.direction = SwiftHUEColorPicker.PickerDirection.horizontal
+		horizontalSaturationPicker.type = SwiftHUEColorPicker.PickerType.color
 		
 		horizontalSaturationPicker.delegate = self
-		horizontalSaturationPicker.direction = SwiftHUEColorPicker.PickerDirection.Horizontal
-		horizontalSaturationPicker.type = SwiftHUEColorPicker.PickerType.Saturation
+		horizontalSaturationPicker.direction = SwiftHUEColorPicker.PickerDirection.horizontal
+		horizontalSaturationPicker.type = SwiftHUEColorPicker.PickerType.saturation
 		
 		horizontalBrightnessPicker.delegate = self
-		horizontalBrightnessPicker.direction = SwiftHUEColorPicker.PickerDirection.Horizontal
-		horizontalBrightnessPicker.type = SwiftHUEColorPicker.PickerType.Brightness
+		horizontalBrightnessPicker.direction = SwiftHUEColorPicker.PickerDirection.horizontal
+		horizontalBrightnessPicker.type = SwiftHUEColorPicker.PickerType.brightness
 		
 		horizontalAlphaPicker.delegate = self
-		horizontalAlphaPicker.direction = SwiftHUEColorPicker.PickerDirection.Horizontal
-		horizontalAlphaPicker.type = SwiftHUEColorPicker.PickerType.Alpha
+		horizontalAlphaPicker.direction = SwiftHUEColorPicker.PickerDirection.horizontal
+		horizontalAlphaPicker.type = SwiftHUEColorPicker.PickerType.alpha
 		
 		verticalColorPicker.delegate = self
-		verticalColorPicker.direction = SwiftHUEColorPicker.PickerDirection.Vertical
-		verticalColorPicker.type = SwiftHUEColorPicker.PickerType.Color
+		verticalColorPicker.direction = SwiftHUEColorPicker.PickerDirection.vertical
+		verticalColorPicker.type = SwiftHUEColorPicker.PickerType.color
 		
 		verticalSaturationPicker.delegate = self
-		verticalSaturationPicker.direction = SwiftHUEColorPicker.PickerDirection.Vertical
-		verticalSaturationPicker.type = SwiftHUEColorPicker.PickerType.Saturation
+		verticalSaturationPicker.direction = SwiftHUEColorPicker.PickerDirection.vertical
+		verticalSaturationPicker.type = SwiftHUEColorPicker.PickerType.saturation
 		
 		verticalBrightnessPicker.delegate = self
-		verticalBrightnessPicker.direction = SwiftHUEColorPicker.PickerDirection.Vertical
-		verticalBrightnessPicker.type = SwiftHUEColorPicker.PickerType.Brightness
+		verticalBrightnessPicker.direction = SwiftHUEColorPicker.PickerDirection.vertical
+		verticalBrightnessPicker.type = SwiftHUEColorPicker.PickerType.brightness
 		
 		verticalAlphaPicker.delegate = self
-		verticalAlphaPicker.direction = SwiftHUEColorPicker.PickerDirection.Vertical
-		verticalAlphaPicker.type = SwiftHUEColorPicker.PickerType.Alpha
+		verticalAlphaPicker.direction = SwiftHUEColorPicker.PickerDirection.vertical
+		verticalAlphaPicker.type = SwiftHUEColorPicker.PickerType.alpha
 	}
 
 	// MARK: - SwiftHUEColorPickerDelegate
 	
-	func valuePicked(color: UIColor, type: SwiftHUEColorPicker.PickerType) {
+	func valuePicked(_ color: UIColor, type: SwiftHUEColorPicker.PickerType) {
 		colorView.backgroundColor = color
 		
 		switch type {
-		case SwiftHUEColorPicker.PickerType.Color:
+		case SwiftHUEColorPicker.PickerType.color:
 			horizontalSaturationPicker.currentColor = color
 			horizontalBrightnessPicker.currentColor = color
 			horizontalAlphaPicker.currentColor = color
@@ -76,7 +76,7 @@ class ViewController: UIViewController, SwiftHUEColorPickerDelegate {
 			verticalBrightnessPicker.currentColor = color
 			verticalAlphaPicker.currentColor = color
 			break
-		case SwiftHUEColorPicker.PickerType.Saturation:
+		case SwiftHUEColorPicker.PickerType.saturation:
 			horizontalColorPicker.currentColor = color
 			horizontalBrightnessPicker.currentColor = color
 			horizontalAlphaPicker.currentColor = color
@@ -84,7 +84,7 @@ class ViewController: UIViewController, SwiftHUEColorPickerDelegate {
 			verticalBrightnessPicker.currentColor = color
 			verticalAlphaPicker.currentColor = color
 			break
-		case SwiftHUEColorPicker.PickerType.Brightness:
+		case SwiftHUEColorPicker.PickerType.brightness:
 			horizontalColorPicker.currentColor = color
 			horizontalSaturationPicker.currentColor = color
 			horizontalAlphaPicker.currentColor = color
@@ -92,7 +92,7 @@ class ViewController: UIViewController, SwiftHUEColorPickerDelegate {
 			verticalSaturationPicker.currentColor = color
 			verticalAlphaPicker.currentColor = color
 			break
-		case SwiftHUEColorPicker.PickerType.Alpha:
+		case SwiftHUEColorPicker.PickerType.alpha:
 			horizontalColorPicker.currentColor = color
 			horizontalSaturationPicker.currentColor = color
 			horizontalBrightnessPicker.currentColor = color
@@ -105,8 +105,8 @@ class ViewController: UIViewController, SwiftHUEColorPickerDelegate {
 	
 	// MARK: - Actions
 	
-	@IBAction func testButtonAction(sender: UIButton) {
-		horizontalColorPicker.currentColor = UIColor.greenColor()
+	@IBAction func testButtonAction(_ sender: UIButton) {
+		horizontalColorPicker.currentColor = UIColor.green
 	}
 	
 }
