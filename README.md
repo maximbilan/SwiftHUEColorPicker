@@ -9,7 +9,14 @@ Simple iOS HUE color picker.</br>
 ## Installation
 <b>CocoaPods:</b>
 <pre>
-pod 'SwiftHUEColorPicker'
+Swift 2.2:
+pod 'SwiftHUEColorPicker', '~> 0.1.7'
+
+Swift 2.3:
+pod 'SwiftHUEColorPicker', '~> 0.2.3'
+
+Swift 3.0:
+pod 'SwiftHUEColorPicker', '~> 0.3.0'
 </pre>
 <b>Manual:</b>
 <pre>
