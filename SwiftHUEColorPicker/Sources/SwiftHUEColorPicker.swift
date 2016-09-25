@@ -159,7 +159,7 @@ public class SwiftHUEColorPicker: UIView {
 			}
 		}
 		
-		let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+		let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
 		UIGraphicsEndImageContext()
 		return image
 	}
@@ -239,10 +239,10 @@ public class SwiftHUEColorPicker: UIView {
 		
 		let context = UIGraphicsGetCurrentContext();
 		circleColor.set()
-		CGContextAddEllipseInRect(context, circleRect);
-		CGContextSetFillColor(context, CGColorGetComponents(circleColor.CGColor));
-		CGContextFillPath(context);
-		CGContextStrokePath(context);
+		CGContextAddEllipseInRect(context!, circleRect);
+		CGContextSetFillColor(context!, CGColorGetComponents(circleColor.CGColor));
+		CGContextFillPath(context!);
+		CGContextStrokePath(context!);
 		
 		let textParagraphStyle = NSMutableParagraphStyle()
 		textParagraphStyle.alignment = .Center
@@ -294,7 +294,7 @@ public class SwiftHUEColorPicker: UIView {
 		handleTouch(point)
 	}
 	
-	override public func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+	override public func touchesCancelled(touches: Set<UITouch>, withEvent event: UIEvent?) {
 		
 	}
 
