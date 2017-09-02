@@ -13,18 +13,7 @@
 		6DC318231AFA29AC00C8D9EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DC318211AFA29AC00C8D9EE /* Main.storyboard */; };
 		6DC318251AFA29AC00C8D9EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DC318241AFA29AC00C8D9EE /* Images.xcassets */; };
 		6DC318281AFA29AC00C8D9EE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DC318261AFA29AC00C8D9EE /* LaunchScreen.xib */; };
-		6DC318341AFA29AC00C8D9EE /* SwiftHUEColorPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC318331AFA29AC00C8D9EE /* SwiftHUEColorPickerTests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		6DC3182E1AFA29AC00C8D9EE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6DC318101AFA29AC00C8D9EE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6DC318171AFA29AC00C8D9EE;
-			remoteInfo = SwiftHUEColorPicker;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6DC18B551B0121A200F1C99B /* SwiftHUEColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftHUEColorPicker.swift; path = Sources/SwiftHUEColorPicker.swift; sourceTree = "<group>"; };
@@ -35,20 +24,10 @@
 		6DC318221AFA29AC00C8D9EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6DC318241AFA29AC00C8D9EE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6DC318271AFA29AC00C8D9EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		6DC3182D1AFA29AC00C8D9EE /* SwiftHUEColorPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftHUEColorPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DC318321AFA29AC00C8D9EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6DC318331AFA29AC00C8D9EE /* SwiftHUEColorPickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftHUEColorPickerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6DC318151AFA29AC00C8D9EE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6DC3182A1AFA29AC00C8D9EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -62,7 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				6DC3181A1AFA29AC00C8D9EE /* SwiftHUEColorPicker */,
-				6DC318301AFA29AC00C8D9EE /* SwiftHUEColorPickerTests */,
 				6DC318191AFA29AC00C8D9EE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,7 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				6DC318181AFA29AC00C8D9EE /* SwiftHUEColorPicker.app */,
-				6DC3182D1AFA29AC00C8D9EE /* SwiftHUEColorPickerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,23 +75,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6DC318301AFA29AC00C8D9EE /* SwiftHUEColorPickerTests */ = {
-			isa = PBXGroup;
-			children = (
-				6DC318331AFA29AC00C8D9EE /* SwiftHUEColorPickerTests.swift */,
-				6DC318311AFA29AC00C8D9EE /* Supporting Files */,
-			);
-			path = SwiftHUEColorPickerTests;
-			sourceTree = "<group>";
-		};
-		6DC318311AFA29AC00C8D9EE /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6DC318321AFA29AC00C8D9EE /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,24 +95,6 @@
 			productReference = 6DC318181AFA29AC00C8D9EE /* SwiftHUEColorPicker.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6DC3182C1AFA29AC00C8D9EE /* SwiftHUEColorPickerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6DC3183A1AFA29AC00C8D9EE /* Build configuration list for PBXNativeTarget "SwiftHUEColorPickerTests" */;
-			buildPhases = (
-				6DC318291AFA29AC00C8D9EE /* Sources */,
-				6DC3182A1AFA29AC00C8D9EE /* Frameworks */,
-				6DC3182B1AFA29AC00C8D9EE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6DC3182F1AFA29AC00C8D9EE /* PBXTargetDependency */,
-			);
-			name = SwiftHUEColorPickerTests;
-			productName = SwiftHUEColorPickerTests;
-			productReference = 6DC3182D1AFA29AC00C8D9EE /* SwiftHUEColorPickerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -167,11 +109,6 @@
 					6DC318171AFA29AC00C8D9EE = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0900;
-					};
-					6DC3182C1AFA29AC00C8D9EE = {
-						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
-						TestTargetID = 6DC318171AFA29AC00C8D9EE;
 					};
 				};
 			};
@@ -189,7 +126,6 @@
 			projectRoot = "";
 			targets = (
 				6DC318171AFA29AC00C8D9EE /* SwiftHUEColorPicker */,
-				6DC3182C1AFA29AC00C8D9EE /* SwiftHUEColorPickerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -202,13 +138,6 @@
 				6DC318231AFA29AC00C8D9EE /* Main.storyboard in Resources */,
 				6DC318281AFA29AC00C8D9EE /* LaunchScreen.xib in Resources */,
 				6DC318251AFA29AC00C8D9EE /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6DC3182B1AFA29AC00C8D9EE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,23 +154,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6DC318291AFA29AC00C8D9EE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6DC318341AFA29AC00C8D9EE /* SwiftHUEColorPickerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		6DC3182F1AFA29AC00C8D9EE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6DC318171AFA29AC00C8D9EE /* SwiftHUEColorPicker */;
-			targetProxy = 6DC3182E1AFA29AC00C8D9EE /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6DC318211AFA29AC00C8D9EE /* Main.storyboard */ = {
@@ -390,39 +303,6 @@
 			};
 			name = Release;
 		};
-		6DC3183B1AFA29AC00C8D9EE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SwiftHUEColorPickerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "maximbilan.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftHUEColorPicker.app/SwiftHUEColorPicker";
-			};
-			name = Debug;
-		};
-		6DC3183C1AFA29AC00C8D9EE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = SwiftHUEColorPickerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "maximbilan.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftHUEColorPicker.app/SwiftHUEColorPicker";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -440,15 +320,6 @@
 			buildConfigurations = (
 				6DC318381AFA29AC00C8D9EE /* Debug */,
 				6DC318391AFA29AC00C8D9EE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6DC3183A1AFA29AC00C8D9EE /* Build configuration list for PBXNativeTarget "SwiftHUEColorPickerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6DC3183B1AFA29AC00C8D9EE /* Debug */,
-				6DC3183C1AFA29AC00C8D9EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
