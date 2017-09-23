@@ -3,14 +3,10 @@
 [![Version](https://img.shields.io/cocoapods/v/SwiftHUEColorPicker.svg?style=flat)](http://cocoadocs.org/docsets/SwiftHUEColorPicker)
 [![License](https://img.shields.io/cocoapods/l/SwiftHUEColorPicker.svg?style=flat)](http://cocoadocs.org/docsets/SwiftHUEColorPicker)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftHUEColorPicker.svg?style=flat)](http://cocoadocs.org/docsets/SwiftHUEColorPicker)
-
-[![Version](https://img.shields.io/cocoapods/v/SwiftHUEColorPicker.svg?style=flat)](http://cocoadocs.org/docsets/SwiftHUEColorPicker)
-[![License](https://img.shields.io/cocoapods/l/SwiftHUEColorPicker.svg?style=flat)](http://cocoadocs.org/docsets/SwiftHUEColorPicker)
-[![Platform](https://img.shields.io/cocoapods/p/SwiftHUEColorPicker.svg?style=flat)](http://cocoadocs.org/docsets/SwiftHUEColorPicker)
 [![CocoaPods](https://img.shields.io/cocoapods/dt/SwiftHUEColorPicker.svg)](https://cocoapods.org/pods/SwiftHUEColorPicker)
 [![CocoaPods](https://img.shields.io/cocoapods/dm/SwiftHUEColorPicker.svg)](https://cocoapods.org/pods/SwiftHUEColorPicker)
 
-Simple iOS HUE color picker.</br>
+iOS HUE color picker.</br>
 ![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img1.png)
 ## Installation
 <b>CocoaPods:</b>
