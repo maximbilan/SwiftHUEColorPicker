@@ -24,7 +24,7 @@ Copy <i>SwiftHUEColorPicker.swift</i> to your project.
 ## Description
 Supports two modes: <i>horizontal</i> and <i>vertical</i>.</br>
 ![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img2.png)
-</br>Also you can change <i>saturation</i>, <i>brightness</i> and <i>alpha</i> values.
+</br>Also, you can change <i>saturation</i>, <i>brightness</i> and <i>alpha</i> values.
 </br>And control has customization. You can customize the label:</br>
 ![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img3.png)
 </br>Or appearance:</br>
@@ -36,7 +36,7 @@ You can create from <i>Storyboard</i> or <i>XIB</i>. Or create manually:
 let picker = SwiftHUEColorPicker()
 </pre>
 
-For handling changing of values you should implement protocol <i>SwiftHUEColorPickerDelegate</i>:
+For handling changing of values, you should implement protocol <i>SwiftHUEColorPickerDelegate</i>:
 <pre>
 picker.delegate = self
 
