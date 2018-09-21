@@ -247,9 +247,9 @@ open class SwiftHUEColorPicker: UIView {
 		let textParagraphStyle = NSMutableParagraphStyle()
 		textParagraphStyle.alignment = .center
 		
-		let attributes: NSDictionary = [NSAttributedStringKey.foregroundColor: labelFontColor,
-										NSAttributedStringKey.paragraphStyle: textParagraphStyle,
-										NSAttributedStringKey.font: labelFont!]
+		let attributes: NSDictionary = [NSAttributedString.Key.foregroundColor: labelFontColor,
+										NSAttributedString.Key.paragraphStyle: textParagraphStyle,
+										NSAttributedString.Key.font: labelFont!]
 		
 		var value: CGFloat = 0
 		switch type {
@@ -271,7 +271,7 @@ open class SwiftHUEColorPicker: UIView {
 		let text = String(textValue) as NSString
 		var textRect = circleRect
 		textRect.origin.y += (textRect.size.height - (labelFont?.lineHeight)!) * 0.5
-		text.draw(in: textRect, withAttributes: attributes as? [NSAttributedStringKey : Any])
+		text.draw(in: textRect, withAttributes: attributes as? [NSAttributedString.Key : Any])
 	}
 	
 	// MARK: - Touch events
