@@ -1,58 +1,72 @@
 ## SwiftHUEColorPicker
 
-[![Version](https://img.shields.io/cocoapods/v/SwiftHUEColorPicker.svg?style=flat)](http://cocoadocs.org/docsets/SwiftHUEColorPicker)
-[![License](https://img.shields.io/cocoapods/l/SwiftHUEColorPicker.svg?style=flat)](http://cocoadocs.org/docsets/SwiftHUEColorPicker)
-[![Platform](https://img.shields.io/cocoapods/p/SwiftHUEColorPicker.svg?style=flat)](http://cocoadocs.org/docsets/SwiftHUEColorPicker)
-[![CocoaPods](https://img.shields.io/cocoapods/dt/SwiftHUEColorPicker.svg)](https://cocoapods.org/pods/SwiftHUEColorPicker)
-[![CocoaPods](https://img.shields.io/cocoapods/dm/SwiftHUEColorPicker.svg)](https://cocoapods.org/pods/SwiftHUEColorPicker)
+[![Version](https://img.shields.io/cocoapods/v/SwiftHUEColorPicker.svg?style=flat)](https://cocoapods.org/pods/SwiftHUEColorPicker)
+[![License](https://img.shields.io/cocoapods/l/SwiftHUEColorPicker.svg?style=flat)](https://cocoapods.org/pods/SwiftHUEColorPicker)
+[![Platform](https://img.shields.io/cocoapods/p/SwiftHUEColorPicker.svg?style=flat)](https://cocoapods.org/pods/SwiftHUEColorPicker)
 
-iOS HUE color picker.</br>
-![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img1.png)
+iOS HUE color picker.
+
+![HUE color picker](img/img1.png)
+
 ## Installation
-<b>CocoaPods:</b>
-<pre>
+
+**CocoaPods:**
+
+```ruby
 pod 'SwiftHUEColorPicker'
-</pre>
-<b>Manual:</b>
-<pre>
-Copy <i>SwiftHUEColorPicker.swift</i> to your project.
-</pre>
+```
+
+**Manual:**
+
+Copy `SwiftHUEColorPicker.swift` to your project.
 
 ## Description
-Supports two modes: <i>horizontal</i> and <i>vertical</i>.</br>
-![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img2.png)
-</br>Also, you can change a <i>saturation</i>, a <i>brightness</i> and <i>alpha</i> values.
-</br>And control has customization. You can customize the label:</br>
-![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img3.png)
-</br>Or appearance:</br>
-</br>
-![alt tag](https://raw.github.com/maximbilan/SwiftHUEColorPicker/master/img/img4.png)
-## Using
-You can create from <i>Storyboard</i> or <i>XIB</i>. Or create manually:
-<pre>
-let picker = SwiftHUEColorPicker()
-</pre>
 
-For handling changing of values, you should implement protocol <i>SwiftHUEColorPickerDelegate</i>:
-<pre>
+Supports two modes: *horizontal* and *vertical*.
+
+![Horizontal and vertical modes](img/img2.png)
+
+You can also change the *saturation*, *brightness* and *alpha* values.
+
+The control is customizable. You can customize the label:
+
+![Custom label](img/img3.png)
+
+Or the appearance:
+
+![Custom appearance](img/img4.png)
+
+## Using
+
+You can create it from a *Storyboard* or *XIB*, or create it manually:
+
+```swift
+let picker = SwiftHUEColorPicker()
+```
+
+To handle value changes, implement the `SwiftHUEColorPickerDelegate` protocol:
+
+```swift
 picker.delegate = self
 
 func valuePicked(color: UIColor, type: SwiftHUEColorPicker.PickerType) {
 }
-</pre>
+```
 
 Direction:
-<pre>
+
+```swift
 picker.direction = SwiftHUEColorPicker.PickerDirection.Vertical // Vertical, Horizontal
-</pre>
+```
 
 Type:
-<pre>
-picker.type = SwiftHUEColorPicker.PickerType.Color // Color, Saturation, Brightness, Alpha
-</pre>
 
-Please see example for using <i>SwiftHUEColorPicker</i> in this repository.
+```swift
+picker.type = SwiftHUEColorPicker.PickerType.Color // Color, Saturation, Brightness, Alpha
+```
+
+Please see the example in this repository for how to use `SwiftHUEColorPicker`.
 
 ## License
 
-SwiftHUEColorPicker is available under the MIT license. See the LICENSE file for more info.
+`SwiftHUEColorPicker` is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
